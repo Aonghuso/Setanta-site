@@ -18,18 +18,18 @@ mura bhfuil.
 Scríobhaimid ráiteas `má`{.setanta} mar seo:
 
 ```{.setanta .numberLines}
-má < slonn éigin > {
-    < cód le dhéanamh má tá an slonn fíor >
+má >-- slonn éigin --< {
+    >-- cód le dhéanamh má tá an slonn fíor
 } nó {
-    < cód le dhéanamh má tá an slonn bréagach >
+    >-- cód le dhéanamh má tá an slonn bréagach
 }
 ```
 
 **Ní chaithfidh tú an cuid `nó`{.setanta} a scríobh, tá sé roghnach. Tá cód mar seo ceart freisin:**
 
 ```{.setanta .numberLines}
-má < slonn éigin > {
-    < cód le dhéanamh má tá an slonn fíor >
+má >-- slonn éigin --< {
+    >-- cód le dhéanamh má tá an slonn fíor
 }
 ```
 
@@ -43,13 +43,16 @@ ainm := ceist("Cad is ainm duit?")
 scríobh("Dia duit", ainm)
 ```
 
-Bainimid úsáid as an gníomh `ceist`{.setanta} chun ceist a chuir ar an úsáideoir faoi a ainm.
+Bainimid úsáid as an gníomh `ceist`{.setanta} chun ceist a chuir ar an úsáideoir faoina ainm.
 Stórálaimid an freagra i athróg `ainm`{.setanta} agus ansin úsáidimid `scríobh`{.setanta} le
 haghaidh an ainm a scríobh ar an gconsól.
 
 Anois athraímis an ríomhchlár chun teachtaireacht speisialta a scríobh más é "Setanta" an ainm.
-Bainimid úsáid as an oibritheoir `==`{.setanta} chun dhá píosa téacs a chuir i gcomparáid. Ansin
-úsáidimid an ráiteas `má`{.setanta} chun rud difriúil a dhéanamh más "Setanta" é an luach.
+Bainimid úsáid as an oibritheoir `==`{.setanta} chun dhá píosa téacs a chuir i gcomparáid. Chun an
+athróg `ainm` a chuir i gcomparáid le "Setanta", scríobhaimid `ainm == "Setanta"`{.setanta}.
+
+Ansin úsáidimid an ráiteas `má`{.setanta} chun an teachtaireacht speisialta a scríobh más "Setanta"
+é an ainm. Féach ar an cód seo:
 
 {{{
 ainm := ceist("Cad is ainm duit?")
@@ -92,3 +95,32 @@ má ainm == "Setanta" {
   Rithfear an cód idir an dara péire lúibíní mura bhfuil an seiceáil a rinneamar fíor.
 - Ar an líne dheireanach scríobhamar `scríobh("Dia duit", ainm)`{.setanta} mar ba mhaith linn é sin
   a scríobh mura bhfuil `ainm`{.setanta} cothrom le "Setanta".
+
+## Dúshlán
+
+Déan iarracht an ríomhchlár seo a leanas a athrú ionas go scríobhann sé "Is é seacláid an bia is
+fearr" má deir an t-úsáideoir gurb é seacláid an bia is fearr leis, agus go scríobhann sé "Is
+aoibhinn liom an bia sin" má deir sé aon bia eile.
+
+**Cuimhnigh nach gá duit síneadh fada (áéíóú) a scríobh, is féidir leat `ma`{.setanta} a scríobh in
+ionad `má`{.setanta}**.
+
+{{{
+
+bia := ceist("Cad é an bia is fearr leat?")
+
+>-- Cuir do chód anseo
+
+scríobh("Is aoibhinn liom an bia sin")
+}}}
+
+[[Cliceáil anseo chun an freagra a fheiceáil |má bia == &quot;Seacláid&quot; { scríobh(&quot;Is é seacláid an bia is fearr&quot;) } nó { scríobh(&quot;Is aoibhinn liom an bia sin&quot;) }]]
+
+# Luachanna Boole
+
+Tá dhá luachanna speisialta ag *Setanta* ar a dtugtar "luachanna Boole" (Ba ollúna matamaitic é
+George Boole i gColaiste na hOllscoile Corcaigh), is iad `fíor`{.setanta} agus `bréag`{.setanta}.
+(Mar is gnách, is féidir leat `fior`{.setanta} agus `breag`{.setanta} a scríobh mura féidir leat "í"
+nó "é" a scríobh).
+
+Is luachanna Boole iad torthaí slonn mar `x == y`{.setanta} nó `bia == "sceallóga"`{.setanta}.
