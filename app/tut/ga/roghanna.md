@@ -124,3 +124,78 @@ George Boole i gColaiste na hOllscoile Corcaigh), is iad `fíor`{.setanta} agus 
 nó "é" a scríobh).
 
 Is luachanna Boole iad torthaí slonn mar `x == y`{.setanta} nó `bia == "sceallóga"`{.setanta}.
+
+## Comparáidí
+
+Bhaineamar úsáid as an oibritheoir `==` chun seiceáil an bhfuil dhá rud cothrom lena chéile, ach is
+féidir linn a lán níos mó a dhéanamh.
+
+Is féidir linn oibritheoirí difriúla a úsáid le haghaidh luachanna a chur i gcomparáid ar bhealaí
+éagsúla:
+
+ Oibritheoir    Brí
+-------------  -----
+`==`           Seiceáil an bhfuil dhá luach cothrom lena chéile
+`!=`           Seiceáil nach bhfuil dhá luach cothrom lena chéile.
+`>`            Seiceáil an bhfuil an luach ar chlé níos mó ná an cheann ar dheis.
+`<`            Seiceáil an bhfuil an luach ar chlé níos lú ná an cheann ar dheis.
+`>=`           Seiceáil an bhfuil an luach ar chlé níos mó ná *nó cothrom leis* an cheann ar dheis.
+`<=`           Seiceáil an bhfuil an luach ar chlé níos lú ná *nó cothrom leis* an cheann ar dheis.
+
+Is é `fíor`{.setanta} toradh na hoibritheoirí sin má tá an seiceáil fíor, agus `bréag`{.setanta}
+mura bhfuil.
+
+Bain triail as an cód seo:
+
+{{{
+scríobh(5 <= 3)
+}}}
+
+Bá chóir duit a fheiceáil go scríobhann sé "bréag" ar an gconsól. Déanann sé sé sin mar níl `5` níos
+mó nó cothrom le `3`.
+
+## Dúshlán
+
+Seo píosa cód páirteach, Cuir oibritheoir ceart in ionad `>-- oibritheoir anseo --<`{.setanta} ionas
+go déanann an cód seiceáil an bhfuil `100`{.setanta} níos lú ná `20 * 6 - 18 * (2 * 1/2)`{.setanta}.
+
+{{{
+scríobh(100 >-- oibritheoir anseo --< 20 * 6 - 18 * (2 * 1/2))
+}}}
+
+[[Cliceáil anseo le haghaidh an freagra|scríobh(100 &lt; 20 * 6 - 18 * (2 * 1/2))]].
+
+Bá chóir go scríobhann an cód "fíor".
+
+## Agus/Nó/Ní
+
+Cad a dhéanfaimid más maith linn níos mó ná rud a amháin a seiceáil? Mar shampla, cad a
+scríobhfaimid chun seiceáil an bhfuil aois éigin níos mó na 20, nó níos lú na 10?
+
+Déanfaimid é sin lé trí oibritheoir cumhachtach: `&`{.setanta} ("agus"), `|`{.setanta} ("nó") agus
+`!`{.setanta} ("ní").
+
+### Agus
+
+Bainimid úsáid as `&`{.setanta} nuair ba mhaith linn seiceáil an bhfuil dhá slonn fíor. Is é
+`fíor`{.setanta} toradh an t-oibritheoir nuair atá an slonn ar chlé fíor, agus an slonn ar dheis.
+
+Mar shampla:
+
+{{{
+scríobh("Dia duit" == "Dia duit" & 5 > 2)
+scríobh("Dia duit" == "Dia duit" & 5 > 6)
+scríobh("Dia duit" == "Slán" & 5 > 2)
+scríobh("Dia duit" == "Slán" & 5 > 6)
+}}}
+
+Má ritheann tú an cód sin, scríobhann sé "fíor" ar an gcéad líne, agus ansin scríobhann sé "bréag"
+trí huaire. Déanann sé sin mar:
+
+1. Ar an gcéad líne, tá `"Dia duit" == "Dia duit"`{.setanta} **agus** `5 > 2`{.setanta} fíor. Mar
+   sin, is é `fíor`{.setanta} toradh an slonn ar fad.
+2. Ar an dara líne, tá `"Dia duit" == "Dia duit"`{.setanta} fós fíor, ach anois níl `5 > 6` fíor.
+   Mar sin, is é `bréag`{.setanta} toradh an slonn ar fad.
+3. Ar an tríú líne, níl `"Dia duit" == "Slán"`{.setanta} fíor, mar sín scríobhann sé "bréag".
+4. Ar an gceathrú lín, tá `"Dia duit" == "Slán"`{.setanta} agus `5 > 6`{.setanta} bréagach, dá bharr
+   sin scríobhann sé "bréag".

@@ -149,7 +149,7 @@ You should see that the code prints "fíor", which is correct.
 
 ## And/Or/Not
 
-What if we want to check more than [[one thing|rud amháin]], for example, what if we want to check if an age is either greater than 20, or less than 10. How do we combine checks?
+What if we want to check more than [[one thing|rud amháin]]? For example, what if we want to check if an age is either greater than 20, or less than 10. How do we combine checks?
 
 We do this with three [[powerful|cumhachtach]] operators called "[[and|agus]]" (`&`), "[[or|nó]]" (`|`) and "[[not|]]" (`!`).
 
@@ -164,7 +164,7 @@ scríobh("hello" == "goodbye" & 5 > 2)
 scríobh("hello" == "goodbye" & 5 > 6)
 }}}
 
-If you run this code you will see that it prints "fíor", then "bréag" and then "bréag" again.
+If you run this code you will see that it prints "fíor", then "bréag", "bréag" and then "bréag" again.
 
 This is because:
 
