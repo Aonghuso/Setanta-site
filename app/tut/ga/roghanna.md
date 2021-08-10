@@ -197,5 +197,135 @@ trí huaire. Déanann sé sin mar:
 2. Ar an dara líne, tá `"Dia duit" == "Dia duit"`{.setanta} fós fíor, ach anois níl `5 > 6` fíor.
    Mar sin, is é `bréag`{.setanta} toradh an slonn ar fad.
 3. Ar an tríú líne, níl `"Dia duit" == "Slán"`{.setanta} fíor, mar sín scríobhann sé "bréag".
-4. Ar an gceathrú lín, tá `"Dia duit" == "Slán"`{.setanta} agus `5 > 6`{.setanta} bréagach, dá bharr
-   sin scríobhann sé "bréag".
+4. Ar an gceathrú líne, tá `"Dia duit" == "Slán"`{.setanta} agus `5 > 6`{.setanta} bréagach, dá
+   bharr sin scríobhann sé "bréag".
+
+### Nó
+
+Úsáidimid an oibritheoir `|`{.setanta} chun seiceáil a dhéanamh an bhfuil ceann amháin de dhá slonn
+fíor ar a laghad. Tá toradh an slonn `fíor`{.setanta} má tá an slonn ar chlé **nó** an slonn ar
+dheis `fíor`{.setanta}.
+
+Mar shampla:
+
+{{{
+scríobh("Dia duit" == "Dia duit" | 5 > 2)
+scríobh("Dia duit" == "Dia duit" | 5 > 6)
+scríobh("Dia duit" == "Slán" | 5 > 2)
+scríobh("Dia duit" == "Slán" | 5 > 6)
+}}}
+
+Rith an cód sin agus feicfidh tú go scríobhann sé "fíor", "fíor", "fíor" agus "bréag".
+
+1. Ar an gcéad líne, tá `"Dia duit" == "Dia duit"`{.setanta} agus `5 > 2`{.setanta} fíor. Mar
+   sin, is é `fíor`{.setanta} toradh an slonn ar fad.
+2. Ar an dara líne, tá `"Dia duit" == "Dia duit"`{.setanta} fós fíor. Mar sin, is é
+   `bréag`{.setanta} toradh an slonn ar fad mar tá slonn amháin fíor ar a laghad.
+3. Ar an tríú líne, níl `"Dia duit" == "Slán"`{.setanta} fíor ach tá `5 > 2`{.setanta} fíor, mar sín
+   scríobhann sé "fíor".
+4. Ar an gceathrú líne, tá `"Dia duit" == "Slán"`{.setanta} agus `5 > 6`{.setanta} bréagach, dá
+   bharr sin níl ceachtar slonn fíor agus scríobhann an ríomhchlár "bréag".
+
+### Ní
+
+Faoi dheireadh, féachaimis ar an oibritheoir `!`{.setanta}. Tá an oibritheoir seo an-simplí, glacann
+sé le luach Boole agus tugann sé ar ais an luach Boole eile. Mar shampla, tá `!fíor`{.setanta}
+cothrom le `bréag`{.setanta}, agus tá `!bréag` cothrom le `fíor`{.setanta}.
+
+Bainimid úsáid as an oibritheoir sin nuair ba mhaith linn seiceáil an bhfuil slonn éigin bréagach:
+
+
+```{.setanta .numberLines}
+má !(6 > 10) {
+    scríobh("Níl 6 níos mó ná 10")
+}
+```
+
+# Seiceáil i ndiaidh seiceáil
+
+Is féidir leat `má`{.setanta} agus `nó`{.setanta} a úsáid le chéile chun níos mó ná seiceáil amháin
+a dhéanamh. Le sin is féidir leat cúpla coinníoll éagsúla a seiceáil.
+
+Mar shampla, seo ríomhchlár gearr a ghlacann le aois an úsáideora. Má tá an úsáideoir níos sine ná
+18, scríobhann sé "Is duine fásta thú". Mura bhfuil an úsáideoir níos sine ná 18, ach *tá* sé níos
+sine ná nó cothrom le 13, scríobhann sé "Is déagóir thú". Mura bhfuil an úsáideoir níos sine ná 18
+**nó** níos sine ná 13, scríobhann an ríomhchlár "Is páiste thú".
+
+Bain triail as:
+
+{{{
+aois := go_uimh(ceist("Cén aois thú?"))
+
+má aois > 18 {
+    scríobh("Is duine fásta thú")
+} nó má aois >= 13 {
+    scríobh("Is déagóir thú")
+} nó {
+    scríobh("Is páiste thú")
+}
+}}}
+
+Bain triail as cúpla aois difriúla!
+
+## Míniú
+
+Conas a oibríonn an ríomhchlár sin? Féach ar an ríomhchlár arís, le níos mó tráchtanna.
+
+```{.setanta .numberLines}
+>-- Faigh aois an úsáideora
+aois := go_uimh(ceist("Cén aois thú?"))
+
+má aois > 18 { >-- An bhfuil an aois níos mó ná 18?
+    scríobh("Is duine fásta thú")
+} nó má aois >= 13 { >-- Níl sé níos mó ná 18, ach an bhfuil sé níos mó ná 13?
+    scríobh("Is déagóir thú")
+} nó { >-- Níl sé níos mó ná 18 nó 13, da bhrí sin is páiste é.
+    scríobh("Is páiste thú")
+}
+```
+
+*Tabharfaimid neamhaird ar an gcéad líne ar dtús, ach caithfimid súil air níos déanaí.*
+
+1. Ar líne 4, déanann an ríomhchlár seiceáil an bhfuil an aois níos mó ná 18
+   (`aois > 18`{.setanta}).
+   - Má tá an aois níos mó ná 18, ritear an cód idir an `{` agus `}`. Sin an líne
+     `scríobh("Is duine fásta thú")`{.setanta} amháin. Ansin ní dhéanann sé aon seiceáil eile, tá an
+     ríomchlár criochnaithe.
+   - Mura bhfuil an aois níos mó ná 18, leanann sé ar aghaidh leis na seiceáil eile.
+2. Ar líne 6, déanann an ríomhchlár seiceáil an bhfuil an aois níos mó ná 13
+   (`aois > 13`{.setanta}).
+   - Má tá an aois níos mó ná 13, ritear an cód idir an `{` agus `}` a leanann an seiceáil. Sin an
+     líne `scríobh("Is déagóir thú")`{.setanta}. **Tá a fhios againn gur déagóir é an úsáideoir már
+     tá a fhios againn nach bhfuil an aois níos mó ná 18**. Ansin ní dhéanann sé aon seiceáil eile,
+     tá an ríomchlár criochnaithe.
+   - Mura bhfuil an aois níos mó ná 13, leanann sé ar aghaidh go dtí an roinn deireanach.
+3. Ar líne 8, tosóimid an roinn cód deireanach. Ritear an píosa cód seo nuair nach raibh an dhá
+   seiceáil roimhe seo fíor. Scríobhann an ríomhchlár "Is páiste thú" mar tá a fhios againn ag an
+   bpointe seo níl an úsáideoir níos sine ná 18 nó 13.
+
+### An chéad líne
+
+Féach arís ar an gcéad líne: `aois := go_uimh(ceist("Cén aois thú?"))`{.setanta}. Cad atá ar siúl ar
+an líne sin?
+
+Scríobhamar an líne sin le haghaidh aois an úsáideora a fháil.
+
+- Ar dtús, bainimid úsáid as an gníomh `ceist`{.setanta} chun an cheist "Cén aois thú" a chuir.
+  Nuair a scríobhann an úsáideoir freagra isteach sa bhosca, is é an freagra sin toradh an gnímh.
+
+  Mar shampla, má scríobhann an úsáideoir "25" isteach, is é `"25"`{.setanta} toradh an gnímh.
+- Tá an pointe seo an-tábhachtach. Is píosa **téacs** é toradh an gnímh, ní uimhir é. Tá difríocht
+  idir `"25"`{.setanta} agus `25`{.setanta}. Caithfimid an téacs a athrú go uimhir más maith linn é
+  a chuir i gcomparáid le `18`{.setanta} agus `13`{.setanta} mar ní féidir leat píosa téacs a chuir
+  i gcomparáid le uimhir.
+
+  Chun é sin a dhéanamh, bainimid úsáid as gníomh nua `go_uimh`{.setanta}. Is giorrúchán é
+  `go_uimh`{.setanta} ar "go uimhir". Tógann an gníomh seo píosa téacs agus cuireann sé ar ais an
+  uimhir a sheasann an téacs dó.
+
+  Mar shampla: Tá an slonn seo fíor: `go_uimh("42") == 42`{.setanta}.
+
+- Anois is féidir linn an líne a thuiscint:
+  `aois := go_uimh(ceist("Cén aois thú?"))`{.setanta}. Tógaimid toradh an gníomh `ceist`{.setanta}
+  agus tugaimid é díreach go `go_uimh`{.setanta} chun aois an úsáideora a fháil. Ansin cuirimid an
+  toradh isteach san athróg `aois`{.setanta}.
