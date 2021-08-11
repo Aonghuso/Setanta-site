@@ -6,14 +6,16 @@ prev-text: An Stáitse
 
 # Roghanna agus Cinntí
 
-Go dtí seo, rinne gach ríomhchlár a scríobhamar an rud céanna. Tosaíonn an léirmhínitheoir ag barr
-an ríomhchláir agus téann sé ó líne go líne díreach go dtí an bun.
+Go dtí seo, rinne gach ríomhchlár a scríobhamar an rud céanna. Thosaigh an
+[[léirmhínitheoir|interpreter]] ag barr an ríomhchláir agus chuaigh sé ó líne go líne díreach go dtí
+an bun.
 
-Más mian linn rudaí níos casta a dhéanamh, ba chóir dúinn cinntí inár ríomhchláir a dhéanamh.
+Más mian linn rudaí níos casta a dhéanamh, ba chóir dúinn [[cinntí|decisions]] a dhéanamh inár
+ríomhchláir
 
-Le haghaidh é sin a dhéanamh, bainimid úsáid go príomha as an ráiteas "`má`{.setanta}". Leis an
-ráiteas `má`{.setanta}, is féidir linn rud amháin a dhéanamh má tá slonn éigin fíor, nó rud eile
-mura bhfuil.
+Le haghaidh é sin a dhéanamh, bainimid úsáid [[go príomha|primarily]] as an ráiteas
+[["`má`{.setanta}"|if statement]]. Leis an ráiteas `má`{.setanta}, is féidir linn rud amháin a
+dhéanamh má tá [[slonn|expression]] éigin fíor, nó rud eile mura bhfuil.
 
 Scríobhaimid ráiteas `má`{.setanta} mar seo:
 
@@ -25,7 +27,8 @@ má >-- slonn éigin --< {
 }
 ```
 
-**Ní chaithfidh tú an cuid `nó`{.setanta} a scríobh, tá sé roghnach. Tá cód mar seo ceart freisin:**
+**Ní chaithfidh tú an cuid `nó`{.setanta} a scríobh, tá sé [[roghnach|optional]]. Tá cód mar seo
+ceart freisin:**
 
 ```{.setanta .numberLines}
 má >-- slonn éigin --< {
@@ -35,8 +38,8 @@ má >-- slonn éigin --< {
 
 ## Sampla
 
-Tosaímis leis an ríomhchlár a scríobhamar cheana. Faigheann an ríomhchlár ainm an t-úsáideoir agus
-scríobhann sé é le "Dia duit" ar an gconsól.
+Tosaímis leis an [[ríomhchlár a scríobhamar cheana|program we wrote before]]. Faigheann an
+ríomhchlár ainm an úsáideora agus scríobhann sé é i ndiaidh "Dia duit" ar an gconsól.
 
 ```{.setanta .numberLines}
 ainm := ceist("Cad is ainm duit?")
@@ -44,12 +47,14 @@ scríobh("Dia duit", ainm)
 ```
 
 Bainimid úsáid as an gníomh `ceist`{.setanta} chun ceist a chuir ar an úsáideoir faoina ainm.
-Stórálaimid an freagra i athróg `ainm`{.setanta} agus ansin úsáidimid `scríobh`{.setanta} le
+Stórálaimid an freagra san athróg `ainm`{.setanta} agus ansin úsáidimid `scríobh`{.setanta} le
 haghaidh an ainm a scríobh ar an gconsól.
 
-Anois athraímis an ríomhchlár chun teachtaireacht speisialta a scríobh más é "Setanta" an ainm.
-Bainimid úsáid as an oibritheoir `==`{.setanta} chun dhá píosa téacs a chuir i gcomparáid. Chun an
-athróg `ainm` a chuir i gcomparáid le "Setanta", scríobhaimid `ainm == "Setanta"`{.setanta}.
+Anois athraímis an ríomhchlár chun teachtaireacht speisialta a scríobh más é "Setanta" an ainm:
+
+Bainimid úsáid as an oibritheoir `==`{.setanta} chun dhá píosa téacs a
+[[chuir i gcomparáid|compare]]. Chun an athróg `ainm` a chuir i gcomparáid le "Setanta",
+scríobhaimid `ainm == "Setanta"`{.setanta}.
 
 Ansin úsáidimid an ráiteas `má`{.setanta} chun an teachtaireacht speisialta a scríobh más "Setanta"
 é an ainm. Féach ar an cód seo:
@@ -85,13 +90,13 @@ má ainm == "Setanta" {
 }
 ```
 
-- Ar an gcéad líne, faighimid ainm an t-úsáideoir mar a rinneamar cheana.
+- Ar an gcéad líne, faighimid ainm an úsáideora mar a rinneamar cheana.
 - Ar an tríú líne, scríobhaimid `má ainm == "Setanta"`{.setanta}. Seiceálann an slonn sin an bhfuil
-  luach na hathróige `ainm`{.setanta} cothrom le "Setanta".
-- Ar an ceathrú líne, scríobhaimid `scríobh("Fáilte romhat Setanta")`{.setanta}. Rithfear an cód sin
-  má tá `ainm`{.setanta} cothrom le "Setanta" mar tá an líne sin idir an chéad péire lúibíní
-  slabhra.
-- An an cúigiú líne bainimid úsáid as an focal `nó`{.setanta} chun an dara roinn den ráiteas a tosú.
+  luach na hathróige `ainm`{.setanta} [[cothrom le|equal to]] "Setanta".
+- Ar an ceathrú líne, scríobhamar `scríobh("Fáilte romhat Setanta")`{.setanta}. Rithfear an cód sin
+  má tá `ainm`{.setanta} cothrom le "Setanta" mar tá an líne sin idir an chéad péire 
+  [[lúibíní slabhra|chain brackets]] ("{" agus "}").
+- Ar an cúigiú líne bainimid úsáid as an focal `nó`{.setanta} chun an dara roinn den ráiteas a tosú.
   Rithfear an cód idir an dara péire lúibíní mura bhfuil an seiceáil a rinneamar fíor.
 - Ar an líne dheireanach scríobhamar `scríobh("Dia duit", ainm)`{.setanta} mar ba mhaith linn é sin
   a scríobh mura bhfuil `ainm`{.setanta} cothrom le "Setanta".
@@ -118,20 +123,20 @@ scríobh("Is aoibhinn liom an bia sin")
 
 # Luachanna Boole
 
-Tá dhá luachanna speisialta ag *Setanta* ar a dtugtar "luachanna Boole" (Ba ollúna matamaitic é
-George Boole i gColaiste na hOllscoile Corcaigh), is iad `fíor`{.setanta} agus `bréag`{.setanta}.
-(Mar is gnách, is féidir leat `fior`{.setanta} agus `breag`{.setanta} a scríobh mura féidir leat "í"
-nó "é" a scríobh).
+Tá dhá luachanna speisialta ag *Setanta* ar a dtugtar "luachanna Boole" (Ba
+[[ollúna matamaitic|mathematics professor]] é George Boole i gColaiste na hOllscoile Corcaigh), is
+iad `fíor`{.setanta} agus `bréag`{.setanta}. (Mar is gnách, is féidir leat `fior`{.setanta} agus
+`breag`{.setanta} a scríobh mura féidir leat "í" nó "é" a scríobh).
 
 Is luachanna Boole iad torthaí slonn mar `x == y`{.setanta} nó `bia == "sceallóga"`{.setanta}.
 
 ## Comparáidí
 
-Bhaineamar úsáid as an oibritheoir `==` chun seiceáil an bhfuil dhá rud cothrom lena chéile, ach is
-féidir linn a lán níos mó a dhéanamh.
+Bhaineamar úsáid as an [[oibritheoir|operator]] `==` chun seiceáil an bhfuil dhá rud cothrom lena
+chéile, ach is féidir linn a lán níos mó a dhéanamh.
 
-Is féidir linn oibritheoirí difriúla a úsáid le haghaidh luachanna a chur i gcomparáid ar bhealaí
-éagsúla:
+Is féidir linn [[oibritheoirí|operators]] difriúla a úsáid le haghaidh luachanna a chur i gcomparáid
+ar bhealaí éagsúla:
 
  Oibritheoir    Brí
 -------------  -----
@@ -156,8 +161,9 @@ mó nó cothrom le `3`.
 
 ## Dúshlán
 
-Seo píosa cód páirteach, Cuir oibritheoir ceart in ionad `>-- oibritheoir anseo --<`{.setanta} ionas
-go déanann an cód seiceáil an bhfuil `100`{.setanta} níos lú ná `20 * 6 - 18 * (2 * 1/2)`{.setanta}.
+Seo píosa cód [[páirteach|partial]], Cuir oibritheoir ceart in ionad `>-- oibritheoir anseo
+--<`{.setanta} ionas go déanann an cód seiceáil an bhfuil `100`{.setanta} níos lú ná `20 * 6 - 18 *
+(2 * 1/2)`{.setanta}.
 
 {{{
 scríobh(100 >-- oibritheoir anseo --< 20 * 6 - 18 * (2 * 1/2))
@@ -170,7 +176,7 @@ Bá chóir go scríobhann an cód "fíor".
 ## Agus/Nó/Ní
 
 Cad a dhéanfaimid más maith linn níos mó ná rud a amháin a seiceáil? Mar shampla, cad a
-scríobhfaimid chun seiceáil an bhfuil aois éigin níos mó na 20, nó níos lú na 10?
+scríobhfaimid chun seiceáil an bhfuil aois éigin níos mó ná 20, nó níos lú ná 10?
 
 Déanfaimid é sin lé trí oibritheoir cumhachtach: `&`{.setanta} ("agus"), `|`{.setanta} ("nó") agus
 `!`{.setanta} ("ní").
@@ -178,7 +184,7 @@ Déanfaimid é sin lé trí oibritheoir cumhachtach: `&`{.setanta} ("agus"), `|`
 ### Agus
 
 Bainimid úsáid as `&`{.setanta} nuair ba mhaith linn seiceáil an bhfuil dhá slonn fíor. Is é
-`fíor`{.setanta} toradh an t-oibritheoir nuair atá an slonn ar chlé fíor, agus an slonn ar dheis.
+`fíor`{.setanta} toradh an oibritheora nuair atá an slonn ar chlé fíor, **agus** an slonn ar dheis.
 
 Mar shampla:
 
@@ -197,14 +203,14 @@ trí huaire. Déanann sé sin mar:
 2. Ar an dara líne, tá `"Dia duit" == "Dia duit"`{.setanta} fós fíor, ach anois níl `5 > 6` fíor.
    Mar sin, is é `bréag`{.setanta} toradh an slonn ar fad.
 3. Ar an tríú líne, níl `"Dia duit" == "Slán"`{.setanta} fíor, mar sín scríobhann sé "bréag".
-4. Ar an gceathrú líne, tá `"Dia duit" == "Slán"`{.setanta} agus `5 > 6`{.setanta} bréagach, dá
-   bharr sin scríobhann sé "bréag".
+4. Ar an gceathrú líne, tá `"Dia duit" == "Slán"`{.setanta} agus `5 > 6`{.setanta}
+   [[bréagach|false]], dá bharr sin scríobhann sé "bréag".
 
 ### Nó
 
 Úsáidimid an oibritheoir `|`{.setanta} chun seiceáil a dhéanamh an bhfuil ceann amháin de dhá slonn
-fíor ar a laghad. Tá toradh an slonn `fíor`{.setanta} má tá an slonn ar chlé **nó** an slonn ar
-dheis `fíor`{.setanta}.
+fíor [[ar a laghad|at least]]. Tá toradh an slonn `fíor`{.setanta} má tá an slonn ar chlé **nó** an
+slonn ar dheis `fíor`{.setanta}.
 
 Mar shampla:
 
@@ -224,7 +230,7 @@ Rith an cód sin agus feicfidh tú go scríobhann sé "fíor", "fíor", "fíor" 
 3. Ar an tríú líne, níl `"Dia duit" == "Slán"`{.setanta} fíor ach tá `5 > 2`{.setanta} fíor, mar sín
    scríobhann sé "fíor".
 4. Ar an gceathrú líne, tá `"Dia duit" == "Slán"`{.setanta} agus `5 > 6`{.setanta} bréagach, dá
-   bharr sin níl ceachtar slonn fíor agus scríobhann an ríomhchlár "bréag".
+   bharr sin níl [[ceachtar|neither]] slonn fíor agus scríobhann an ríomhchlár "bréag".
 
 ### Ní
 
@@ -244,12 +250,12 @@ má !(6 > 10) {
 # Seiceáil i ndiaidh seiceáil
 
 Is féidir leat `má`{.setanta} agus `nó`{.setanta} a úsáid le chéile chun níos mó ná seiceáil amháin
-a dhéanamh. Le sin is féidir leat cúpla coinníoll éagsúla a seiceáil.
+a dhéanamh. Le sin is féidir leat cúpla [[coinníoll|conditions]] éagsúla a seiceáil.
 
-Mar shampla, seo ríomhchlár gearr a ghlacann le aois an úsáideora. Má tá an úsáideoir níos sine ná
-18, scríobhann sé "Is duine fásta thú". Mura bhfuil an úsáideoir níos sine ná 18, ach *tá* sé níos
-sine ná nó cothrom le 13, scríobhann sé "Is déagóir thú". Mura bhfuil an úsáideoir níos sine ná 18
-**nó** níos sine ná 13, scríobhann an ríomhchlár "Is páiste thú".
+Mar shampla, seo ríomhchlár gearr a ghlacann le aois an úsáideora. Má tá an t-úsáideoir níos sine ná
+18, scríobhann sé "Is duine fásta thú". Mura bhfuil an t-úsáideoir níos sine ná 18, ach *tá* sé níos
+sine ná nó cothrom le 13, scríobhann sé "Is [[déagóir|teenager]] thú". Mura bhfuil an t-úsáideoir
+níos sine ná 18 **nó** níos sine ná 13, scríobhann an ríomhchlár "Is páiste thú".
 
 Bain triail as:
 
@@ -269,7 +275,7 @@ Bain triail as cúpla aois difriúla!
 
 ## Míniú
 
-Conas a oibríonn an ríomhchlár sin? Féach ar an ríomhchlár arís, le níos mó tráchtanna.
+Conas a oibríonn an ríomhchlár sin? Féach ar an ríomhchlár arís, le níos mó [[tráchtanna|comments]].
 
 ```{.setanta .numberLines}
 >-- Faigh aois an úsáideora
@@ -284,7 +290,7 @@ má aois > 18 { >-- An bhfuil an aois níos mó ná 18?
 }
 ```
 
-*Tabharfaimid neamhaird ar an gcéad líne ar dtús, ach caithfimid súil air níos déanaí.*
+*[[Tabharfaimid neamhaird|we will ignore]] ar an gcéad líne ar dtús, ach caithfimid súil air níos déanaí.*
 
 1. Ar líne 4, déanann an ríomhchlár seiceáil an bhfuil an aois níos mó ná 18
    (`aois > 18`{.setanta}).
@@ -295,13 +301,14 @@ má aois > 18 { >-- An bhfuil an aois níos mó ná 18?
 2. Ar líne 6, déanann an ríomhchlár seiceáil an bhfuil an aois níos mó ná 13
    (`aois > 13`{.setanta}).
    - Má tá an aois níos mó ná 13, ritear an cód idir an `{` agus `}` a leanann an seiceáil. Sin an
-     líne `scríobh("Is déagóir thú")`{.setanta}. **Tá a fhios againn gur déagóir é an úsáideoir már
+     líne `scríobh("Is déagóir thú")`{.setanta}. **Tá a fhios againn gur déagóir é an t-úsáideoir már
      tá a fhios againn nach bhfuil an aois níos mó ná 18**. Ansin ní dhéanann sé aon seiceáil eile,
      tá an ríomchlár criochnaithe.
-   - Mura bhfuil an aois níos mó ná 13, leanann sé ar aghaidh go dtí an roinn deireanach.
+   - Mura bhfuil an aois níos mó ná 13, leanann sé ar aghaidh go dtí an [[roinn|section]]
+     deireanach.
 3. Ar líne 8, tosóimid an roinn cód deireanach. Ritear an píosa cód seo nuair nach raibh an dhá
    seiceáil roimhe seo fíor. Scríobhann an ríomhchlár "Is páiste thú" mar tá a fhios againn ag an
-   bpointe seo níl an úsáideoir níos sine ná 18 nó 13.
+   bpointe seo níl an t-úsáideoir níos sine ná 18 nó 13.
 
 ### An chéad líne
 
@@ -311,17 +318,17 @@ an líne sin?
 Scríobhamar an líne sin le haghaidh aois an úsáideora a fháil.
 
 - Ar dtús, bainimid úsáid as an gníomh `ceist`{.setanta} chun an cheist "Cén aois thú" a chuir.
-  Nuair a scríobhann an úsáideoir freagra isteach sa bhosca, is é an freagra sin toradh an gnímh.
+  Nuair a scríobhann an t-úsáideoir freagra isteach sa bhosca, is é an freagra sin toradh an gnímh.
 
-  Mar shampla, má scríobhann an úsáideoir "25" isteach, is é `"25"`{.setanta} toradh an gnímh.
+  Mar shampla, má scríobhann an t-úsáideoir "25" isteach, is é `"25"`{.setanta} toradh an gnímh.
 - Tá an pointe seo an-tábhachtach. Is píosa **téacs** é toradh an gnímh, ní uimhir é. Tá difríocht
   idir `"25"`{.setanta} agus `25`{.setanta}. Caithfimid an téacs a athrú go uimhir más maith linn é
   a chuir i gcomparáid le `18`{.setanta} agus `13`{.setanta} mar ní féidir leat píosa téacs a chuir
   i gcomparáid le uimhir.
 
-  Chun é sin a dhéanamh, bainimid úsáid as gníomh nua `go_uimh`{.setanta}. Is giorrúchán é
-  `go_uimh`{.setanta} ar "go uimhir". Tógann an gníomh seo píosa téacs agus cuireann sé ar ais an
-  uimhir a sheasann an téacs dó.
+  Chun é sin a dhéanamh, bainimid úsáid as gníomh nua `go_uimh`{.setanta}. Is
+  [[giorrúchán|shortening]] é `go_uimh`{.setanta} ar "go uimhir". Tógann an gníomh seo píosa téacs
+  agus cuireann sé ar ais an uimhir a sheasann an téacs dó.
 
   Mar shampla: Tá an slonn seo fíor: `go_uimh("42") == 42`{.setanta}.
 
