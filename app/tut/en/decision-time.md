@@ -23,7 +23,13 @@ má < some check > {
 }
 ```
 
-*The [[`nó`{.setanta}|or]] section is [[optional|roghnach]]*
+**The [[`nó`{.setanta}|or]] section is [[optional|roghnach]]. Code like this is also correct:**
+
+```{.setanta .numberLines}
+má < some check > {
+    <code to execute if the check is true>
+}
+```
 
 ## Example
 
@@ -39,6 +45,7 @@ We use the [[`ceist`{.setanta}|question]] action to ask the user for their name,
 Let's expand the program to print a special message if the name entered is "Setanta". We use the `==` operator to [[compare|cuir i gcomparáid]] two pieces of text, and we use the `má`{.setanta} statement to [[control|smachtaigh]] the decision that's made:
 
 {{{
+
 ainm := ceist("Cad is ainm duit?")
 
 má ainm == "Setanta" {
@@ -142,7 +149,7 @@ You should see that the code prints "fíor", which is correct.
 
 ## And/Or/Not
 
-What if we want to check more than [[one thing|rud amháin]], for example, what if we want to check if an age is either greater than 20, or less than 10. How do we combine checks?
+What if we want to check more than [[one thing|rud amháin]]? For example, what if we want to check if an age is either greater than 20, or less than 10. How do we combine checks?
 
 We do this with three [[powerful|cumhachtach]] operators called "[[and|agus]]" (`&`), "[[or|nó]]" (`|`) and "[[not|]]" (`!`).
 
@@ -157,7 +164,7 @@ scríobh("hello" == "goodbye" & 5 > 2)
 scríobh("hello" == "goodbye" & 5 > 6)
 }}}
 
-If you run this code you will see that it prints "fíor", then "bréag" and then "bréag" again.
+If you run this code you will see that it prints "fíor", then "bréag", "bréag" and then "bréag" again.
 
 This is because:
 
