@@ -1,5 +1,7 @@
 ---
 title: Roghanna agus Cinntí
+next: liostai
+next-text: Liostaí agus Lúba
 prev: an-staitse
 prev-text: An Stáitse
 ---
