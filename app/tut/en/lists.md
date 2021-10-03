@@ -150,7 +150,7 @@ How a "le idir" loop works is:
 2. Then it assigns this variable the "\<start\>" value.
 3. It runs the code between the curly braces (`{ }`).
 4. It then [[increases|méadaíonn]] the value in the loop variable.
-5. It checks if the loop variable is equal to the "\<finish\>" variable. If it is, [[it exits|scoireann sé]] the "le idir" loop and [[continues|leanann]] on after.
+5. It checks if the loop variable is equal to the "\<finish\>" value. If it is, [[it exits|scoireann sé]] the "le idir" loop and [[continues|leanann]] on after.
 6. If the loop variable wasn't equal to the finish value, then it [[returns|filleann]] to step 3.
 
 This might be a little confusing to read, but it's easy to see with an example. Let's run the following code:
@@ -181,18 +181,69 @@ Finally after *Setanta* runs the code for `4`{.setanta} it increases the value o
 
 The next statement is `scríobh("Finished")`{.setanta}, so it writes "Finished" on the console. This is the last statement so the program finishes.
 
-## List print
+## Printing out a list
 
-Now that we can use *le idir* loops, we can use them to loop over each element of a list with ease. Try this code out:
+Now we will see how to use "le-idir" loops with lists. We will use a loop to print out every element
+of a list.
+
+Let's start with a short list:
+
+```{.setanta}
+my_list := [1, 2, 3, 4, 5]
+```
+
+There are five elements in that list, we want to use each one, because of that we need to use every
+index. We should write `my_list[0]`{.setanta}, `my_list[1]`{.setanta}, `my_list[2]`{.setanta},
+`my_list[3]`{.setanta} and `my_list[4]`{.setanta}. To do that, we should use a loop to go from 0 to
+4\. We saw in the previous example that we can use this list to go from 0 to 4:
+
+```{.setanta .numberLines}
+le i idir (0, 5) {
+}
+```
+
+Let's use that again to write every element of the list, try it out:
 
 {{{
 my_list := [1, 2, 3, 4, 5]
+
+le i idir (0, 5) {
+    scríobh(my_list[i])
+}
+}}}
+
+But now, what happens when we add a new number to the list? There is now a new number `6`{.setanta}
+in the list, try the code again:
+
+{{{
+my_list := [1, 2, 3, 4, 5, 6]
+
+le i idir (0, 5) {
+    scríobh(my_list[i])
+}
+}}}
+
+It doesn't write out "6" on the console! Why? It doesn't write it because the loop stops when it
+gets to index 4, and `6`{.setanta} is at index 5. If we want to we can change the finish value from
+`5`{.setanta} to `6`{.setanta}, but is there a smarter way?
+
+Notice that in the first example that `5`{.setanta} is equal to the length of the list, this is not
+a coincidence! We want the loop to go from 0 to the last index, and we saw before that the last
+index would be `fad@my_list - 1`{.setanta}. **A "le-idir" loop stops before the finish value"**,
+because of that if we use `fad@my_list` as the finish value, the loop will stop at
+`fad@my_list - 1`{.setanta}. This is exactly what we want to do!
+
+Now this is our code:
+
+{{{
+my_list := [1, 2, 3, 4, 5, 6]
+
 le i idir (0, fad@my_list) {
     scríobh(my_list[i])
 }
 }}}
 
-This code prints out every element of a list. It does this by using a *le idir* loop from 0 up to the length of the list, using the loop variable to access the list elements and using `scríobh`{.setanta} to write them on the console.
+When you run this now it writes every element of the list! Try out shorter lists and longer lists!
 
 ## List sum
 
