@@ -34,6 +34,9 @@ html {
 #TOC li, #all-toc li {
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
+}
+#TOC > ul > li, #all-toc > ul > li {
     flex-wrap: wrap;
 }
 #TOC ul li:before, #all-toc li:before { /* the custom styled bullets */
@@ -46,7 +49,6 @@ html {
 }
 #TOC a, #all-toc a {
     font-size: 1.25rem;
-    max-width: calc(0.7 * var(--nav-width));
     text-decoration: none;
     padding: 2px 8px 2px 8px;
     border-radius: 10px;
@@ -62,6 +64,7 @@ html {
 #TOC ul > li > ul, #all-toc > li > ul {
     border-left: 1px dashed var(--theme-primary);
     margin-left: 0.25rem;
+    max-width: calc(100% - 40px);
 }
 .centerer {
     display: flex;

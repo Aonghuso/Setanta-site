@@ -131,3 +131,5 @@ l := ["Is", "aoibhinn", "liom", "Setanta"]
 >-- Faigh an ball deireanach
 scríobh(l[fad@l - 1])
 }}}
+
+## Téacs i gcomparáid le liostaí
