@@ -295,3 +295,155 @@ le i idir (0, fad@mo_liosta) {
 
 Nuair a ritheann tú é anois, scríobhann sé gach ball den liosta. Bain triail as liosta níos giorra,
 nó liosta níos faide!
+
+## Ag suimiú liostaí
+
+Anois, samhlaigh go bhfuil liosta uimhreacha againn, agus ba mhaith linn an suim iomlán a ríomh.
+
+Tosaímis le liosta gearr arís
+
+
+```{.setanta .numberLines}
+mo_liosta := [10, 20, 30]
+```
+
+Caithfimid athróg a cruthú chun an suim a stóráil. Tosaímis le luach `0`{.setanta}.
+
+```{.setanta .numberLines}
+mo_liosta := [10, 20, 30]
+
+suim := 0
+
+scríobh(suim)
+```
+
+Bá mhaith linn dul tríd an liosta ag suimiú an luach san athróg `suim` le gach ball sa liosta mar
+seo:
+
+```{.setanta .numberLines}
+mo_liosta := [10, 20, 30]
+
+suim := 0
+
+suim = suim + mo_liosta[0]
+suim = suim + mo_liosta[1]
+suim = suim + mo_liosta[2]
+
+scríobh(suim)
+```
+
+Oibríonn an cód sin, ach má fásann an liosta níos faide, caithfimid línte nua a chur isteach. In
+ionas na líne sin, is féidir linn liosta cosúil leis an liosta ón roinn roimhe a úsáid, mar seo:
+
+```{.setanta .numberLines}
+mo_liosta := [10, 20, 30]
+
+suim := 0
+
+le i idir (0, fad@mo_liosta) {
+    suim = suim + mo_liosta[i]
+}
+
+scríobh(suim)
+```
+
+Anois oibríonn an cód sin le aon liosta. Bain triail as anseo:
+
+{{{
+mo_liosta := [10, 20, 30]
+
+suim := 0
+
+le i idir (0, fad@mo_liosta) {
+    suim = suim + mo_liosta[i]
+}
+
+scríobh(suim)
+}}}
+
+### Gearrscríobh
+
+Scríobhamar `suim = suim + mo_liosta[i]` sa cód roimhe seo, ach tá caoi níos giorra ag *Setanta*
+chun é sin a dhéanamh, an ráiteas `+=`:
+
+```{.setanta .numberLines}
+suim += mo_liosta[i]
+```
+
+Ciallaíonn an líne sin agus an líne `suim = suim + mo_liosta[i]` an rud céanna. Tá ráiteas `*=`,
+`-=` agus `/=` freisin chun iolrú, dealú agus roinnt a dhéanamh.
+
+
+## Céimeanna
+
+Is féidir uimhir eile a úsáid le lúb "le-idir", scríobhann tú é tar éis an uimhir tosaigh agus an
+uimhir deiridh. Athraíonn an uimhir seo an céim a thógann an lúb nuair a méadaítear an athróg lúibe.
+
+Mar shampla:
+
+{{{
+le i idir (0, 11, 2) {
+    scríobh(i)
+}
+}}}
+
+Scríobhann an ríomhchlár sin 0, 2, 4, 6, 8 agus 10. Tabhair faoi deara go bhfuil `2`{.setanta} tar
+éis an `0`{.setanta} agus an `11`{.setanta}. Dá bhrí sin méadaíonn an athróg lúibe faoi 2, mar sin
+ní feicimid ach 0, 2, 4 srl sa chonsól.
+
+### Ag laghdú
+
+Má tá an luach deiridh *níos lú* ná an luach tosaigh, ní méadaíonn an athróg lúibe, laghdaíonn sé.
+Mar shampla:
+
+{{{
+le i idir (10, 0) {
+    scríobh(i)
+}
+}}}
+
+# Ealaín ciorcail
+
+Déanaimis anois rud spéisiúil! Bainfimid úsáid as lúba agus an stáitse chun pictiúir áille a
+tharraing. Cruthaímis ríomhchlár anois ina féidir leis an úsáideoir uimhir a chlóscríobh isteach,
+agus tarraingeoidh an ríomhchlár an méid ciorcail sin go randamach in áiteanna randamach ar an
+stáitse, le méideanna fánach freisin.
+
+![Tarraingímis ciorcail](../en/assets/circle-art.png)
+
+Ar dtús, tá cúpla gníomhartha agus luachanna ba chór dúinn a fheiceáil sula dtosóimid.
+
+## Randamach
+
+Chun áiteanna randamach a phiocadh, teastaíonn uimhreacha fánacha uainn, ach conas a chruthaíonn tú
+uimhir fánach? Ar an dea-uair tá 2 gníomhartha ag *Setanta* chun rudaí randamach a dhéanamh: `rand`
+agus `slánuimh_rand`. Is gníomhartha matamaitice iad, mar sin scríobhaimid `rand@mata`{.setanta}
+agus `slánuimh_rand@mata`{.setanta} (nó `slanuimh_rand@mata`{.setanta}) chun iad a úsáid.
+
+- Tugann `rand` uimhir randamach dúinn idir 0 agus 1. Mar shampla: 0.5, 0.333 srl.
+- Glacann `slánuimh_rand` le 2 argóint, agus tugann sé ar ais slánuimhir randamach idir na
+  huimhreacha sin. Mar shampla, is féidir le `slánuimhir_rand@mata(3, 5)` 3, 4, nó 5 a thabhairt ar
+  ais.
+
+Bain triail as an cód seo cúpla uair:
+
+{{{
+scríobh(slánuimh_rand@mata(0, 100))
+}}}
+
+Bá chóir duit uimhreacha difriúla a fheiceáil idir 0 agus 100.
+
+## An Stáitse
+
+Chun áiteanna fánacha a phiocadh amach ar an stáitse, caithfimid leithead an stáitse agus airde an
+stáitse a fháil. Mar a chonaiceamar roimhe seo, is féidir linn na luachanna sin a fháil le
+`fad_x@stáitse`{.setanta} agus `fad_y@stáitse`{.setanta}.
+
+Bain triail as an cód seo:
+
+{{{
+scríobh("Leithead", fad_x@stáitse)
+scríobh("Airde", fad_y@stáitse)
+}}}
+
+## An Ealaín

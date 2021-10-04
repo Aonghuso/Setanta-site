@@ -326,7 +326,7 @@ This loop starts at 0 and increases by 2 instead of 1 each time.
 
 ### Bonus Tip
 
-*If the start value is smaller than the finish value, the loop will [[decrease|laghdaíonn]] by 1 each time, instead of increasing*.
+*If the finish value is smaller than the start value, the loop will [[decrease|laghdaíonn]] by 1 each time, instead of increasing*.
 
 # Circle Art
 
@@ -353,7 +353,7 @@ Try out this code a few times:
 scríobh(slánuimh_rand@mata(0, 100))
 }}}
 
-You should get different numbers from 0 to 99 each time.
+You should get different numbers from 0 to 100 each time.
 
 ## The Stage
 
