@@ -7,19 +7,19 @@ prev-text: Roghanna agus Cinntí
 # Liostaí
 
 Go dtí seo bhíomar ag úsáid téacs agus uimhreacha inár ríomhchláir. Bhaineamar úsáid as iad sin chun
-rudaí an-tábhachtach a dhéanamh, ach tá siad an-teoranta.
+rudaí an-cumhachtach a dhéanamh, ach tá siad an-teoranta.
 
-Cad a dhéanfaimid más maith linn go leor píosaí téacs nó go leor uimhreacha a úsáid? Chun é sin a
-dhéanamh, ba chóir dúinn **liostaí** a úsáid. Mar a shamhlófá, is féidir linn liostaí a úsáid chun
-liosta luachanna a chruthú.
+Cad a dhéanfadh muid dá mba mhaith linn go leor píosaí téacs nó go leor uimhreacha a úsáid? Chun é
+sin a dhéanamh, ba chóir dúinn **liostaí** a úsáid. Mar a shamhlófá, is féidir linn liostaí a úsáid
+chun liosta luachanna a chruthú.
 
 ## Ag cruthú liostaí
 
-Déantar liostaí le lúibíní cearnacha (`[`, `]`) timpeall an liosta luachanna, agus camóga (`,`) idir
+Déantar liostaí le lúibíní cearnacha (`[`, `]`) timpeall liosta luachanna, le camóga (`,`) idir
 na baill. Mar shampla: is é `[100, 200, 300]`{.setanta} liosta le 3 bhall; Is é `100`{.setanta} an
 chéad bhall, is é `200`{.setanta} an dara ball agus `300`{.setanta} an tríú ball.
 
-Is é `[]`{.setanta} liosta folamh.
+Is liosta folamh é `[]`{.setanta}.
 
 Déan iarracht `4` a chur leis an liosta `[1, 2, 3]`{.setanta} mar ceathrú ball anseo:
 
@@ -62,8 +62,8 @@ scríobh(x)
 - Ar an chéad líne, cruthaímid liosta nua `[1, 2, 3]`{.setanta}, agus stórálaimid é san athróg `x`.
 - Ar an dara líne, nuashonraímid an t-athróg `x` leis an luach `x + [4]`{.setanta}.
   Is é `[1, 2, 3]`{.setanta} luach reatha `x`, dá bhrí sin is é `[1, 2, 3] + [4]`{.setanta} luach
-  `x + 4`{.setanta}. Tá `[1, 2, 3] + [4]`{.setanta} cothrom le `[1, 2, 3, 4]`. Mar sin is é an luach
-  `x` nua ná `[1, 2, 3, 4]`{.setanta}.
+  `x + 4`{.setanta}. Tá `[1, 2, 3] + [4]`{.setanta} cothrom le `[1, 2, 3, 4]`{.setanta}. Mar sin is
+  é ná `[1, 2, 3, 4]`{.setanta} an luach `x` nua.
 - Ar an tríú líne, scríobhaimid `x`. Ar an gconsól feicimid "[1, 2, 3, 4]".
 
 ## Ag fáil baill
@@ -71,15 +71,15 @@ scríobh(x)
 Anois tá a fhios againn conas liostaí a chruthú, ach conas is féidir linn na baill a fháil amach as
 na liostaí?
 
-Tá baill an liosta uimhrithe. Is é an chéad bhall ball 0, is é an dara ball ball 1, an tríú ball
-ball 2 agus araile. Tugaimid "innéacs an bhaill" ar an uimhir sin.
+Tá baill an liosta uimhrithe, agus tugaimid **"innéacs an bhaill"** ar an uimhir sin. Is é 0 innéacs an
+chéad bhall, is é 1 innéacs an dara ball, 2 innéacs an tríú ball agus araile.
 
 ![Na innéacsanna](assets/inneacs.png)
 
-Bainimid úsáid arís as lúibíní cearnacha (`[]`) chun baill an liosta a fháil ag innéacs éigin.
+Bainimid úsáid arís as lúibíní cearnacha (`[]`) chun ball liosta a fháil ag innéacs éigin.
 Cuirimid an innéacs idir na lúibíní tar éis an liosta. Mar shampla: má tá liosta againn san athróg
 `ár_liosta`, is féidir linn `ár_liosta[0]`{.setanta} a scríobh chun an chéad bhall a fháil (is é 0
-innéacs na chéad bhall). Scríobhaimid `ár_liosta[1]`{.setanta} chun a dara ball a fháil, agus
+innéacs an chéad bhall). Scríobhaimid `ár_liosta[1]`{.setanta} chun a dara ball a fháil, agus
 `ár_liosta[2]`{.setanta} chun an tríú ball a fháil. Seo sampla beag:
 
 {{{
