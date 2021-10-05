@@ -447,3 +447,162 @@ scríobh("Airde", fad_y@stáitse)
 }}}
 
 ## An Ealaín
+
+Anois tá sé in am an ríomhchlár a scríobh. Ar dtús, ba mhaith linn an méid ciorcail a fháil ón
+úsáideoir. Cuimhnigh gur féidir linn an gníomh `ceist`{.setanta} a úsáid chun ceist a chur ar an
+úsáideoir agus `go_uimh`{.setanta} chun téacs a athrú go uimhir.
+
+```{.setanta .numberLines}
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+```
+
+Anois ba mhaith linn an méid sin ciorcail a chruthú, is féidir linn lúb *"le-idir"* chun é sin a
+dhéanamh.
+
+```{.setanta .numberLines}
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    >-- Scríobhfaimid an cód chun ciorcail a tharraing anseo
+}
+```
+
+Le haghaidh ciorcal fánach a tharraing, ba chóir dúinn x-comhordanáid agus y-comhordanáid agus ga
+randamach. Bainimis úsáid as `slánuimh_rand`, `fad_x` agus `fad_y` chun na comhordanáidí sin a
+phiocadh:
+
+Chun an ga randamach a phiocadh, is féidir linn uimhir a phiocadh idir 50 agus 100.
+
+```{.setanta .numberLines}
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    x_rand := slánuimh_rand@mata(0, fad_x@stáitse)
+    y_rand := slánuimh_rand@mata(0, fad_y@stáitse)
+    ga_rand := slánuimh_rand@mata(50, 100)
+}
+```
+
+Anois níl ach le déanamh againn ach an ciorcail a tharraing le `ciorcal@stáitse`{.setanta}:
+
+```{.setanta .numberLines}
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    x_rand := slánuimh_rand@mata(0, fad_x@stáitse)
+    y_rand := slánuimh_rand@mata(0, fad_y@stáitse)
+    ga_rand := slánuimh_rand@mata(50, 100)
+
+    ciorcal@stáitse(x_rand, y_rand, ga_rand)
+}
+```
+
+Bain triail as an ríomhchlár anois: Tosaigh an ríomhchlár, scríobh isteach an méid ciorcail is mian
+leat agus ansin oscail an táb "Stáitse" chun na ciorcail a fheiceáil.
+
+{{{
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    x_rand := slánuimh_rand@mata(0, fad_x@stáitse)
+    y_rand := slánuimh_rand@mata(0, fad_y@stáitse)
+    ga_rand := slánuimh_rand@mata(50, 100)
+
+    ciorcal@stáitse(x_rand, y_rand, ga_rand)
+}
+}}}
+
+### Dathanna
+
+Tá na ciorcail dubh leadránach, bheadh sé níos fearr ciorcail ildaite a tharraing. Anois bainimis
+úsáid as liostaí chun dathanna a chur isteach inár bpictiúir.
+
+Chruthaímis liosta gearr de na dathanna ba mhaith linn a úsáid:
+
+```{.setanta .numberLines}
+dathanna := ["dearg", "buí", "gorm", "glas"]
+
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    x_rand := slánuimh_rand@mata(0, fad_x@stáitse)
+    y_rand := slánuimh_rand@mata(0, fad_y@stáitse)
+    ga_rand := slánuimh_rand@mata(50, 100)
+
+    ciorcal@stáitse(x_rand, y_rand, ga_rand)
+}
+```
+
+Phioc mé amach "dearg", "buí", "gorm" agus "glas", ach is féidir leat dathanna difriúil a phiocadh
+más mian leat.
+
+Chun ball fánach a phiocadh ón liosta sin, ba chóir dúinn innéacs randamach a phiocadh. Is féidir
+linn `slánuimh_rand` a úsáid arís chun é sin a dhéanamh. Is iad na huimhreacha ó 0 go `fad@dathanna
+- 1`{.setanta} innéacs an liosta, dá bhrí sin tabharfaidh `slánuimh_rand@mata(0, fad@dathanna -
+  1)`{.setanta} innéacs fánach dúinn.
+
+```{.setanta .numberLines}
+dathanna := ["dearg", "buí", "gorm", "glas"]
+
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    x_rand := slánuimh_rand@mata(0, fad_x@stáitse)
+    y_rand := slánuimh_rand@mata(0, fad_y@stáitse)
+    ga_rand := slánuimh_rand@mata(50, 100)
+
+    innéacs_rand := slánuimh_rand@mata(0, fad@dathanna - 1)
+
+    ciorcal@stáitse(x_rand, y_rand, ga_rand)
+}
+```
+
+Anois is féidir linn an innéacs sin a úsáid chun dath a fháil ón liosta agus
+`dath@stáitse`{.setanta} a úsáid chun dath an ciorcail a athrú:
+
+```{.setanta .numberLines}
+dathanna := ["dearg", "buí", "gorm", "glas"]
+
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    x_rand := slánuimh_rand@mata(0, fad_x@stáitse)
+    y_rand := slánuimh_rand@mata(0, fad_y@stáitse)
+    ga_rand := slánuimh_rand@mata(50, 100)
+
+    innéacs_rand := slánuimh_rand@mata(0, fad@dathanna - 1)
+
+    dath@stáitse(dathanna[innéacs_rand])
+
+    ciorcal@stáitse(x_rand, y_rand, ga_rand)
+}
+```
+
+Bain triail as an cód arís:
+
+{{{
+dathanna := ["dearg", "buí", "gorm", "glas"]
+
+méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
+
+le i idir (0, méid_ciorcail) {
+    x_rand := slánuimh_rand@mata(0, fad_x@stáitse)
+    y_rand := slánuimh_rand@mata(0, fad_y@stáitse)
+    ga_rand := slánuimh_rand@mata(50, 100)
+
+    innéacs_rand := slánuimh_rand@mata(0, fad@dathanna - 1)
+
+    dath@stáitse(dathanna[innéacs_rand])
+
+    ciorcal@stáitse(x_rand, y_rand, ga_rand)
+}
+}}}
+
+### Taispeántas
+
+![Ealaín ciorcail](assets/ealaín-ciorcail.gif)
+
+### Dúshlán
+
+Athraigh an cód ionas go úsáideann sé `ciorcal_lán@stáitse`{.setanta} in ionad
+`ciorcal@stáitse`{.setanta}, cad a tharlaíonn?
