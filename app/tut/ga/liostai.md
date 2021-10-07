@@ -1,5 +1,7 @@
 ---
 title: Liostaí agus Lúba
+next: nuair-a
+next-text: Ag Lúbadh Go Deo
 prev: roghanna
 prev-text: Roghanna agus Cinntí
 tsn-fname: lists
