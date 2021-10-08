@@ -94,3 +94,121 @@ nuair-a fíor {
 }}}
 
 Bain triail as! (Ná déan dearmad faoi an cnaipe <iron-icon class="play" icon="av:stop"></iron-icon>.
+
+# Ag Neadú
+
+Is féidir linn lúba a chur isteach i lúba eile! Tugaimid "lúba neadaithe" ar lúba mar seo. Tá lúba
+neadaithe an-úsáideach le haghaidh rudaí casta a dhéanamh. Féach ar an sampla seo:
+
+## Sampla
+
+Seo cód le lúba neadaithe:
+
+{{{
+le i idir (0, 3) {
+    le j idir (0, 3) {
+        scríobh("Amuigh:", i, "Istigh:", j)
+    }
+}
+}}}
+
+Tosaíonn na lúba seo ag 0 agus stopann siad ag 0. Gach uair a ritheann an lúb amuigh, ritheann an
+lúb istigh 3 huaire. Bain triail as an cód sin.
+
+## Dathanna agus Méideanna
+
+Anois bainimis úsáid as lúba neadaithe, Samhlaigh go bhfuil liosta dathanna agus liosta méideanna
+againn, agus ba mhaith linn ciorcail a tharraing le gach méid agus gach dath.
+
+Tosaímis le liosta dathanna agus lúb amháin chun dul tríd an liosta:
+
+```{.setanta .numberLines}
+dathanna := ["glas", "buí", "bándearg", "gorm"]
+
+le i idir (0, fad@dathanna) {
+    dath := dathanna[i]
+
+    >-- Athraigh an dath
+    dath@stáitse(dath)
+}
+```
+
+Anois is féidir linn an liosta méideanna a chruthú, agus lúba neadaithe chun dul tríd an liosta.
+
+```{.setanta .numberLines}
+dathanna := ["glas", "buí", "bándearg", "gorm"]
+
+méideanna := [50, 100, 200]
+
+le i idir (0, fad@dathanna) {
+    dath := dathanna[i]
+
+    >-- Athraigh an dath
+    dath@stáitse(dath)
+
+    le j idir (0, fad@méideanna) {
+        méid := méideanna[j]
+    }
+}
+```
+
+Anois, sa lúb istigh tá na hathróige `dath` agus `méid` againn, agus is féidir linn ciorcail a
+tharraing, ach cén áit?
+
+Chun an ciorcail a tharraing i lár an stáitse is féidir linn `fad_x` agus `fad_y` a úsáid. Chun an
+lárphointe a fháil níl le dhéanamh againn ach roinn `fad_x` agus `fad_y` faoi 2.
+
+```{.setanta .numberLines}
+dathanna := ["glas", "buí", "bándearg", "gorm"]
+
+méideanna := [50, 100, 200]
+
+le i idir (0, fad@dathanna) {
+    dath := dathanna[i]
+
+    >-- Athraigh an dath
+    dath@stáitse(dath)
+
+    le j idir (0, fad@méideanna) {
+        méid := méideanna[j]
+
+        >-- Glan an stáitse.
+        glan@stáitse()
+
+        >-- Tarraing an ciorcal i lár an stáitse.
+        ciorcal@stáitse(fad_x@stáitse / 2, fad_y@stáitse / 2, méid)
+    }
+}
+```
+
+Faoi dheireadh, ba chóir dúinn fan ar feadh tamaill beag tar éis dúinn an ciorcal a tharraing.
+Ba chóir dúinn é seo a dhéanamh mar mura ndéanaimid é beidh an ríomhchlár i bhfad ró thapa. Ní
+bheadh am againn chun na ciorcail ar leith a fheiceáil.
+
+Bain triail as!
+
+{{{s
+dathanna := ["glas", "buí", "bándearg", "gorm"]
+
+méideanna := [50, 100, 200]
+
+le i idir (0, fad@dathanna) {
+    dath := dathanna[i]
+
+    >-- Athraigh an dath
+    dath@stáitse(dath)
+
+    le j idir (0, fad@méideanna) {
+        méid := méideanna[j]
+
+        >-- Glan an stáitse.
+        glan@stáitse()
+
+        >-- Tarraing an ciorcal i lár an stáitse.
+        ciorcal@stáitse(fad_x@stáitse / 2, fad_y@stáitse / 2, méid)
+
+        >-- Codail ar feadh tamall beag.
+        codladh(400)
+    }
+}
+}}}

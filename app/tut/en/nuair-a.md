@@ -200,7 +200,7 @@ le i idir (0, fad@colours) {
         >-- Draw the circle at the midpoint with radius `size`
         ciorcal@stáitse(fad_x@stáitse / 2, fad_y@stáitse / 2, size)
 
-        coladh(400)
+        codladh(400)
     }
 }
 }}}
