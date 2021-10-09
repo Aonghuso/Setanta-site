@@ -7,7 +7,7 @@ prev-text: Liostaí agus Lúba
 # Lúba "Nuair-a"
 
 Sa leathanach roimhe seo d'fhoghlaimíomar faoi lúba "le idir", bhí siad an-úsáideach le haghaidh
-píosaí cód a ritheadh arís agus arís, ach bhí siad teoranta mar bhí orainn an uimhir tosaigh agus an
+píosaí cód a rith arís agus arís, ach bhí siad teoranta mar bhí orainn an uimhir tosaigh agus an
 uimhir deiridh a phiocadh sula dtosaigh an lúb ag rith. Cad is féidir linn a dhéanamh mura bhfuil a
 fhios againn cé mhéad lúb de dhíth orainn, nó má ba mhaith linn rudaí a dhéanamh go deo?
 
@@ -19,7 +19,7 @@ Scríobhaimid lúb "nuair-a" mar seo:
 
 ```{.setanta .numberLines}
 nuair-a < coinníoll > {
-    >-- Cód le ath-ritheadh
+    >-- Cód le ath-rith
 }
 ```
 
@@ -210,5 +210,271 @@ le i idir (0, fad@dathanna) {
         >-- Codail ar feadh tamall beag.
         codladh(400)
     }
+}
+}}}
+
+# Stop! {#stad}
+
+Anois déanfaimid iarracht ríomhchlár nua a chruthú a ligeann don úsáideoir liosta téacs a
+chlóscríobh go dtí go gclóscríobhann siad "Stop", ansin scríobhfaidh an ríomhchlár an liosta ar ais
+ar an gconsól. Féach ar an GIF seo:
+
+![Ag clóscríobh liosta téacs](assets/ag-closcriobh-liosta-teacs.gif)
+
+Is féidir linn an gníomh `léigh`{.setanta} a úsáid chun ionchur an úsáideora a fháil. Tosaímis le
+lúb `nuair-a fíor`{.setanta} agus feicimid níos déanaí conas éalú ón lúb.
+
+```{.setanta .numberLines}
+>-- Cruthaigh liosta folamh.
+liosta := []
+
+nuair-a fíor {
+    >-- Faigh téacs ón úsáideoir.
+    téacs := léigh()
+
+    >-- Cuir an téacs leis an liosta.
+    liosta += [téacs]
+}
+```
+
+Má ritear an ríomhchlár sin, leanfaidh sé ar aghaidh go deo ag léigh téacs ón gconsól. Ba mhaith
+linn scoir ón lúb nuair a scríobhann an úsáideoir "Stop". Conas is féidir linn é sin a dhéanamh?
+
+## DIY
+
+Má úsáidimid coinníoll éigin in ionad `fíor`{.setanta}, beidh muid ábalta an lúb a stopadh.
+Cruthaímis athróg nua `stop` leis an luach `bréag`{.setanta} agus bainimis úsáid as an athróg sin
+mar coinníoll an lúibe mar seo:
+
+```{.setanta .numberLines}
+>-- Cruthaigh liosta folamh.
+liosta := []
+
+stop := bréag
+
+nuair-a !stop {
+    >-- Faigh téacs ón úsáideoir.
+    téacs := léigh()
+
+    >-- Cuir an téacs leis an liosta.
+    liosta += [téacs]
+}
+```
+
+Anois leanfaidh an lúb ag rith nuair atá `stop` cothrom le `bréag`{.setanta}, agus stopfaidh sé má
+tá sé cothrom lé `fíor`{.setanta}. Anois nuair a faighimid téacs ón úsáideoir, is féidir linn an
+athróg `stop` a athrú go `fíor`{.setanta} má tá an téacs cothrom le `"Stop"`{.setanta}.
+
+```{.setanta .numberLines}
+>-- Cruthaigh liosta folamh.
+liosta := []
+
+stop := bréag
+
+nuair-a !stop {
+    >-- Faigh téacs ón úsáideoir.
+    téacs := léigh()
+
+    má téacs == "Stop" {
+        stop = fíor
+    } nó {
+        >-- Cuir an téacs leis an liosta.
+        liosta += [téacs]
+    }
+}
+```
+
+Anois cuirimis líne ag an deireadh chun an liosta a scríobh amach agus beidh ríomhchlár ceart
+againn.
+
+{{{
+>-- Cruthaigh liosta folamh.
+liosta := []
+
+stop := bréag
+
+nuair-a !stop {
+    >-- Faigh téacs ón úsáideoir.
+    téacs := léigh()
+
+    má téacs == "Stop" {
+        stop = fíor
+    } nó {
+        >-- Cuir an téacs leis an liosta.
+        liosta += [téacs]
+    }
+}
+scríobh(liosta)
+}}}
+
+Bain triail as! Rith an ríomhchlár agus scríobh isteach cúpla rudaí difriúla, ansin scríobh "Stop"
+agus ba chóir duit liosta na rudaí a scríobh tú a fheiceáil sa chonsól.
+
+## An bealach níos fearr
+
+D'oibrigh an cód sin i gceart, ach bhí sé beagáinín casta, an bhfuil bealach níos simplí?
+
+Tá eochairfhocal `bris`{.setanta} ag *Setanta*, is féidir linn é a úsáid chun **bris** amach as lúb
+éigin. Nuair a léann an léirmhínitheoir *Setanta* `bris`{.setanta} stopann sé láithreach agus fágann
+sé an lúb, ansin leanann sé ar aghaidh le aon cód tar éis an lúibe.
+
+Bain triail as anseo:
+
+{{{
+le i idir (0, 10) {
+    má i == 5 {
+        bris
+    }
+    scríobh(i)
+}
+}}}
+
+Má ritheann tú an cód sin, feicfidh tú "0", "1", "2", "3" agus "4" ar an gconsól, cén fáth nach
+bhfeiceann tú na huimhreacha eile ("5", "6" srl.)?
+
+Stopann an ríomhchlár ag "4" mar nuair a thosaíonn an lúb le `i` cothrom le `5`{.setanta}, tá an
+seic `ma i == 5`{.setanta} fíor. Mar sin ritheann sé an líne `bris`{.setanta}. Ar an bpointe
+scoireann *Setanta* ón lúb. Níl aon cód eile tar éis an lúibe, mar sin tá an ríomhchlár
+críochnaithe.
+
+### Dúshlán
+
+Bog an líne `scríobh(i)`{.setanta} ionas go scríobhann an ríomhchlár sin "5" freisin.
+
+[[Cliceáil anseo le haghaidh an freagra|Cuir an líne sin roimh an ráiteas &quot;má&quot;]]
+
+### Ag Réitigh Ár gCód
+
+Seo é an cód a scríobhamar níos luaithe:
+
+```{.setanta .numberLines}
+>-- Cruthaigh liosta folamh.
+liosta := []
+
+stop := bréag
+
+nuair-a !stop {
+    >-- Faigh téacs ón úsáideoir.
+    téacs := léigh()
+
+    má téacs == "Stop" {
+        stop = fíor
+    } nó {
+        >-- Cuir an téacs leis an liosta.
+        liosta += [téacs]
+    }
+}
+scríobh(liosta)
+}}}
+```
+
+Anois is féidir linn gach rud a bhaineann leis an athróg `stop` a scrios agus an focal
+`bris`{.setanta} a úsáid ina ionad. Féach ar an cód anois:
+
+```{.setanta .numberLines}
+>-- Cruthaigh liosta folamh.
+liosta := []
+
+nuair-a fíor {
+    >-- Faigh téacs ón úsáideoir.
+    téacs := léigh()
+
+    má téacs == "Stop" {
+        bris
+    }
+
+    >-- Cuir an téacs leis an liosta.
+    liosta += [téacs]
+}
+scríobh(liosta)
+}}}
+```
+
+Tá an cód seo i bhfad níos simplí, agus déanann sé an rud céanna.
+
+# Lean ort!
+
+Tá eochairfhocal eile ag *Setanta* a bhaineann le lúba, is é `chun-cinn`{.setanta}. Nuair a
+d'úsáideamar `bris`{.setanta}, scoir sé amach ón lúb go hiomlán, ach déanann `chun-cinn`{.setanta}
+rud difriúil, nuair a úsáidimid `chun-cinn`{.setanta} bogann *Setanta* ar ais go dtí barr an lúibe
+agus tosaíonn sé an lúb arís (leis an gcéad luach eile den athróg lúibe i gcás lúb "le-idir").
+
+Féach ar an ríomhchlár seo:
+
+{{{s
+dathanna := ["buí", "gorm", "dubh", "dearg", "bandearg", "glas"]
+
+le i idir (0, fad@dathanna) {
+    dath := dathanna[i]
+
+    dath@stáitse(dath)
+
+    x := slánuimh_rand@mata(0, fad_x@stáitse)
+    y := slánuimh_rand@mata(0, fad_y@stáitse)
+
+    ciorcal@stáitse(x, y, 100)
+}
+}}}
+
+Tá liosta dathanna sa ríomhchlár sin, agus péinteálann sé ciorcal ag áit randamach le gach dath sa
+liosta.
+
+Cad is féidir linn a dhéanamh más maith linn neamhaird a thabhairt ar gach dath a thosaíonn le "g"?
+Ba féidir linn ráiteas `má`{.setanta} mór a úsáid, ach bheadh sé sin an míshlachtmhar. In ionad sin
+is féidir linn `chun-cinn`{.setanta} a úsáid chun léim go dtí an gcéad dath eile má dtosaíonn an
+dath reatha le "g".
+
+Cuimhnigh gur féidir linn na litreacha ar leith i bpíosa téacs a roghnú le slonn innéacs, díreach
+mar a dhéanaimid le liostaí. Chun seic a dhéanamh an bhfuil an céad litir cothrom le "g", is féidir
+linn an ráiteas seo a scríobh: `má dath[0] == "g"`{.setanta}. Anois cuirimis an píosa cód seo
+isteach inár lúb:
+
+```{.setanta .numberLines}
+má dath[0] == "g" {
+    chun-cinn
+}
+```
+
+Seo é an cód anois:
+
+```{.setanta .numberLines}
+dathanna := ["buí", "gorm", "dubh", "dearg", "bandearg", "glas"]
+
+le i idir (0, fad@dathanna) {
+    dath := dathanna[i]
+
+    má dath[0] == "g" {
+        chun-cinn
+    }
+
+    dath@stáitse(dath)
+
+    x := slánuimh_rand@mata(0, fad_x@stáitse)
+    y := slánuimh_rand@mata(0, fad_y@stáitse)
+
+    ciorcal@stáitse(x, y, 100)
+}
+```
+
+Anois nuair a thosaíonn an dath le "g", rithfear an líne `chun-cinn`{.setanta}, ansin bogfaidh
+léirmhínitheoir *Setanta* ar ais go dtí barr an lúibe agus leanfaidh sé ar aghaidh léis an gcéad
+dath eile. Bain triail as anseo, tabhair faoi deara nach bhfuil aon ciorcal "glas" nó "gorm"!
+
+{{{s
+dathanna := ["buí", "gorm", "dubh", "dearg", "bandearg", "glas"]
+
+le i idir (0, fad@dathanna) {
+    dath := dathanna[i]
+
+    má dath[0] == "g" {
+        chun-cinn
+    }
+
+    dath@stáitse(dath)
+
+    x := slánuimh_rand@mata(0, fad_x@stáitse)
+    y := slánuimh_rand@mata(0, fad_y@stáitse)
+
+    ciorcal@stáitse(x, y, 100)
 }
 }}}
