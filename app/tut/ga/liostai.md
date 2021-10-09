@@ -6,7 +6,7 @@ prev-text: Roghanna agus Cinntí
 
 # Liostaí
 
-Go dtí seo bhíomar ag úsáid téacs agus uimhreacha inár ríomhchláir. Bhaineamar úsáid as iad sin chun
+Go dtí seo bhíomar ag úsáid téacs agus uimhreacha inár ríomhchláir. Bhaineamar úsáid astu chun
 rudaí [[an-cumhachtach|very powerful]] a dhéanamh, ach tá siad [[an-teoranta|very limited]].
 
 Cad a dhéanfadh muid dá mba mhaith linn go leor píosaí téacs nó go leor uimhreacha a úsáid? Chun é
@@ -17,13 +17,13 @@ chruthú.
 ## Ag cruthú liostaí
 
 Déantar liostaí le [[lúibíní cearnacha|square brackets]] (`[`, `]`) timpeall liosta luachanna, le
-[[camóga|commas]] (`,`) idir na [[baill|elements]]. Mar shampla: is é `[100, 200, 300]`{.setanta}
-liosta le 3 bhall; Is é `100`{.setanta} an chéad bhall, is é `200`{.setanta} an dara ball agus
-`300`{.setanta} an tríú ball.
+[[camóga|commas]] (`,`) idir na [[baill|elements]]. Mar shampla: is liosta le trí bhall é
+`[100, 200, 300]`{.setanta}; Is é `100`{.setanta} an chéad bhall, is é `200`{.setanta} an dara ball
+agus `300`{.setanta} an tríú ball.
 
 Is [[liosta folamh|empty list]] é `[]`{.setanta}.
 
-Déan iarracht `4` a chur leis an liosta `[1, 2, 3]`{.setanta} mar ceathrú ball anseo:
+Déan iarracht `4` a chur leis an liosta `[1, 2, 3]`{.setanta} mar ceathrú bhall anseo:
 
 {{{
 scríobh([1, 2, 3])
@@ -50,7 +50,7 @@ Is féidir liostaí a chur le chéile leis an oibritheoir `+`. Mar shampla: tá 
 scríobh([10, 20] + [30, 40])
 }}}
 
-Cruthaíonn `+` liosta nua ó na dhá liostaí, cuireann sé an chéad liosta ar dtús, agus an dara liosta
+Cruthaíonn `+` liosta nua as an dá liosta, cuireann sé an chéad liosta ar dtús, agus an dara liosta
 in a dhiaidh sin. Is féidir linn é sin a úsáid chun ball nua a chuir le liosta:
 
 {{{
@@ -65,10 +65,10 @@ scríobh(x)
 - Ar an dara líne, [[nuashonraímid|we update]] an t-athróg `x` leis an luach `x + [4]`{.setanta}.
   Is é `[1, 2, 3]`{.setanta} [[luach reatha|current value]] `x`, dá bhrí sin is é
   `[1, 2, 3] + [4]`{.setanta} luach `x + 4`{.setanta}. Tá `[1, 2, 3] + [4]`{.setanta} cothrom le
-  `[1, 2, 3, 4]`{.setanta}. Mar sin is é ná `[1, 2, 3, 4]`{.setanta} an luach `x` nua.
+  `[1, 2, 3, 4]`{.setanta}. Mar sin is é ná `[1, 2, 3, 4]`{.setanta} an luach nua `x`.
 - Ar an tríú líne, scríobhaimid `x`. Ar an gconsól feicimid "[1, 2, 3, 4]".
 
-## Ag fáil baill
+## Ag roghnú baill
 
 Anois tá a fhios againn conas liostaí a chruthú, ach conas is féidir linn na baill a fháil amach as
 na liostaí?
@@ -79,10 +79,10 @@ Is é 0 innéacs an chéad bhall, is é 1 innéacs an dara ball, 2 innéacs an t
 
 ![Na innéacsanna](assets/inneacs.png)
 
-Bainimid úsáid arís as lúibíní cearnacha (`[]`) chun ball liosta a fháil ag innéacs éigin.
+Bainimid úsáid arís as lúibíní cearnacha (`[]`) chun ball liosta ag innéacs áirithe a roghnú.
 Cuirimid an innéacs idir na lúibíní tar éis an liosta. Mar shampla: má tá liosta againn san athróg
-`ár_liosta`, is féidir linn `ár_liosta[0]`{.setanta} a scríobh chun an chéad bhall a fháil (is é 0
-innéacs an chéad bhall). Scríobhaimid `ár_liosta[1]`{.setanta} chun a dara ball a fháil, agus
+`ár_liosta`, is féidir linn `ár_liosta[0]`{.setanta} a scríobh chun an chéad bhall a roghnú (is é 0
+innéacs an chéad bhall). Scríobhaimid `ár_liosta[1]`{.setanta} chun a dara ball a roghnú, agus
 `ár_liosta[2]`{.setanta} chun an tríú ball a fháil. Seo sampla beag:
 
 {{{
@@ -101,7 +101,7 @@ Bain triail as [[luachanna difriúla|different values]] don innéacs ar an líne
 ### Teorainn
 
 Níl ach 4 baill sa liosta `[10, 20, 30, 40]`{.setanta} as an sampla roimhe seo, cad a tharlaíonn má
-déanaimid iarracht an cúigiú ball a fháil (innéacs 4)? Bain triail as:
+déanaimid iarracht an cúigiú ball a roghnú (innéacs 4)? Bain triail as:
 
 {{{
 [10, 20, 30, 40][4]
@@ -111,7 +111,7 @@ Bá chóir duit [[earráid|error]] a fháil cosúil le "Tá 4 thar teorainn an l
 
 ![Earráid teorann](../en/assets/out-of-bounds.png)
 
-Má tá [[fad|length]] L ag liosta éigin, is iad 0, 1, 2, ... L - 1 na innéacs is féidir leat a úsáid.
+Má tá [[fad|length]] L ag liosta éigin, is iad 0, 1, 2, ... L - 1 na hinnéacs is féidir leat a úsáid.
 
 ## Fad
 
@@ -416,7 +416,7 @@ le i idir (10, 0) {
 Déanaimis anois rud spéisiúil! Bainfimid úsáid as lúba agus an stáitse chun pictiúir áille a
 tharraing. Cruthaímis ríomhchlár anois ina féidir leis an úsáideoir uimhir a chlóscríobh isteach,
 agus tarraingeoidh an ríomhchlár an méid ciorcail sin go randamach in áiteanna randamach ar an
-stáitse, le méideanna fánach freisin.
+stáitse, le méideanna randamacha freisin.
 
 ![Tarraingímis ciorcail](../en/assets/circle-art.png)
 
@@ -424,8 +424,8 @@ Ar dtús, tá cúpla gníomhartha agus luachanna ba chór dúinn a fheiceáil su
 
 ## Randamach
 
-Chun áiteanna randamach a phiocadh, teastaíonn uimhreacha fánacha uainn, ach conas a chruthaíonn tú
-uimhir fánach? Ar an dea-uair tá 2 gníomhartha ag *Setanta* chun rudaí randamach a dhéanamh: `rand`
+Chun áiteanna randamach a phiocadh, teastaíonn uimhreacha randamacha uainn, ach conas a chruthaíonn tú
+uimhir randamach? Ar an dea-uair tá 2 gníomhartha ag *Setanta* chun rudaí randamach a dhéanamh: `rand`
 agus `slánuimh_rand`. Is gníomhartha matamaitice iad, mar sin scríobhaimid `rand@mata`{.setanta}
 agus `slánuimh_rand@mata`{.setanta} (nó `slanuimh_rand@mata`{.setanta}) chun iad a úsáid.
 
@@ -444,8 +444,8 @@ Bá chóir duit uimhreacha difriúla a fheiceáil idir 0 agus 100.
 
 ## An Stáitse
 
-Chun áiteanna fánacha a phiocadh amach ar an stáitse, caithfimid leithead an stáitse agus airde an
-stáitse a fháil. Mar a chonaiceamar roimhe seo, is féidir linn na luachanna sin a fháil le
+Chun áiteanna randamacha a phiocadh amach ar an stáitse, caithfimid leithead an stáitse agus airde
+an stáitse a fháil. Mar a chonaiceamar roimhe seo, is féidir linn na luachanna sin a fháil le
 `fad_x@stáitse`{.setanta} agus `fad_y@stáitse`{.setanta}.
 
 Bain triail as an cód seo:
@@ -472,11 +472,11 @@ sin a dhéanamh.
 méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
 
 le i idir (0, méid_ciorcail) {
-    >-- Scríobhfaimid an cód chun ciorcail a tharraing anseo
+    >-- Scríobhfaimid an cód chun ciorcail a tharraingt anseo
 }
 ```
 
-Le haghaidh ciorcal fánach a tharraing, ba chóir dúinn [[x-comhordanáid|x coordinate]] agus
+Le haghaidh ciorcal randamach a tharraingt, ba chóir dúinn [[x-comhordanáid|x coordinate]] agus
 [[y-comhordanáid|y coordinate]] agus [[ga|radius]] randamach a fháil. Bainimis úsáid as
 `slánuimh_rand`, `fad_x` agus `fad_y` chun na comhordanáidí sin a phiocadh:
 
@@ -492,7 +492,7 @@ le i idir (0, méid_ciorcail) {
 }
 ```
 
-Anois níl ach le déanamh againn ach an ciorcail a tharraing le `ciorcal@stáitse`{.setanta}:
+Anois níl ach le déanamh againn ach an ciorcail a tharraingt le `ciorcal@stáitse`{.setanta}:
 
 ```{.setanta .numberLines}
 méid_ciorcail := go_uimh(ceist("Cé mhéad ciorcail?"))
@@ -546,10 +546,10 @@ le i idir (0, méid_ciorcail) {
 Phioc mé amach "dearg", "buí", "gorm" agus "glas", ach is féidir leat dathanna difriúil a phiocadh
 más mian leat.
 
-Chun ball fánach a phiocadh ón liosta sin, ba chóir dúinn innéacs randamach a phiocadh. Is féidir
+Chun ball randamach a phiocadh ón liosta sin, ba chóir dúinn innéacs randamach a phiocadh. Is féidir
 linn `slánuimh_rand` a úsáid arís chun é sin a dhéanamh. Is iad na huimhreacha ó 0 go `fad@dathanna
 - 1`{.setanta} innéacs an liosta, dá bhrí sin tabharfaidh
-  `slánuimh_rand@mata(0, fad@dathanna - 1)`{.setanta} innéacs fánach dúinn.
+  `slánuimh_rand@mata(0, fad@dathanna - 1)`{.setanta} innéacs randamach dúinn.
 
 ```{.setanta .numberLines}
 dathanna := ["dearg", "buí", "gorm", "glas"]
