@@ -7,13 +7,14 @@ prev-text: Liostaí agus Lúba
 # Lúba "Nuair-a"
 
 Sa leathanach roimhe seo d'fhoghlaimíomar faoi lúba "le idir", bhí siad an-úsáideach le haghaidh
-píosaí cód a rith arís agus arís, ach bhí siad teoranta mar bhí orainn an uimhir tosaigh agus an
-uimhir deiridh a phiocadh sula dtosaigh an lúb ag rith. Cad is féidir linn a dhéanamh mura bhfuil a
-fhios againn cé mhéad lúb atá de dhíth orainn, nó má ba mhaith linn rudaí a dhéanamh go deo?
+píosaí cód a rith arís agus arís, ach bhí siad [[teoranta|limited]] mar bhí orainn an uimhir tosaigh
+agus an uimhir deiridh a phiocadh sula dtosaigh an lúb ag rith. Cad is féidir linn a dhéanamh mura
+bhfuil a fhios againn [[cé mhéad lúb atá de dhíth orainn|how many loops we need]], nó má ba mhaith
+linn rudaí a dhéanamh [[go deo|forever]]?
 
 Is féidir linn cineál lúb nua a úsáid, an lúb *"nuair-a"*. Tugaimid lúb "nuair-a" ar an gcineál lúb
-seo mar ritheann an cineál lúb seo cód arís agus arís **nuair a**tá slonn éigin fíor. Tugaimid "an
-coinníoll" ar an slonn sin.
+seo mar ritheann an cineál lúb seo cód arís agus arís **nuair a**tá slonn éigin fíor. Tugaimid **"an
+[[coinníoll|condition]]"** ar an slonn sin.
 
 Scríobhaimid lúb "nuair-a" mar seo:
 
@@ -26,8 +27,8 @@ nuair-a <coinníoll> {
 Oibríonn lúb "nuair-a" mar seo:
 
 1. Nuair a sroicheann an léirmhínitheoir *Setanta* lúb "nuair-a", ar dtús déanann sé seic an bhfuil
-   an coinníoll fíor (cosúil lé ráiteas `má`{.setanta}). Mura bhfuil an coinníoll fíor, scoireann sé
-   den lúb agus leanann sé ar aghaidh leis an cód tar éis an lúibe.
+   an coinníoll fíor (cosúil lé [[ráiteas|statement]] `má`{.setanta}). Mura bhfuil an coinníoll
+   fíor, scoireann sé den lúb agus leanann sé ar aghaidh leis an cód tar éis an lúibe.
 2. Tar éis an seic, ritheann sé an cód idir na lúibíní slabhracha (`{` agus `}`).
 3. Ansin bogann sé ar ais go céim 1.
 
@@ -53,8 +54,8 @@ Nuair a ritheann tú an cód sin scríobhann sé "0", "1" agus "2", Cén fáth?
 
 - Ar an gcéad líne, cruthaíonn *Setanta* athróg nua `x` le luach `0`{.setanta}.
 - Ansin, leanann sé ar aghaidh agus sroicheann sé an lúb. Is é `x < 3`{.setanta} an coinníoll. Dá
-  bhrí sin, déanann *Setanta* seic an bhfuil `x < 3`{.setanta} fíor. Faoi láthair tá `x` cothrom le
-  0, mar sin tá `x < 3`{.setanta} fíor.
+  bhrí sin, déanann *Setanta* seic an bhfuil `x < 3`{.setanta} fíor. [[Faoi láthair|Currently]] tá
+  `x` cothrom le 0, mar sin tá `x < 3`{.setanta} fíor.
 - Mar bhí an coinníoll fíor, ritear an cód sa lúb, scríobhann sé "0" ar an gconsól agus méadaíonn sé
   `x`. Anois is é `1`{.setanta} luach `x`.
 - Anois filleann *Setanta* ar ais go dtí an coinníoll, anois tá `x` cothrom le `1`{.setanta}, mar
@@ -68,9 +69,9 @@ Nuair a ritheann tú an cód sin scríobhann sé "0", "1" agus "2", Cén fáth?
 ## Ag lúbadh go deo
 
 Cad is féidir linn a dhéanamh más mian linn rudaí le dhéanamh go deo? Mar shampla ríomhchlár a
-scríobhann "Dia duit" gach 2 soicind? Is féidir linn é sin a dhéanamh, níl le déanamh againn ach
-coinníoll a scríobh atá fíor i gcónaí, mar shampla: `1 == 1`{.setanta} nó `2 + 3 == 5`{.setanta}.
-Is é `fíor`{.setanta} an rud is simplí áfach.
+scríobhann "Dia duit" [[gach 2 soicind|every 2 seconds]]? Is féidir linn é sin a dhéanamh, níl le
+déanamh againn ach coinníoll a scríobh atá [[fíor i gcónaí|always true]], mar shampla:
+`1 == 1`{.setanta} nó `2 + 3 == 5`{.setanta}. Is é `fíor`{.setanta} an slonn is simplí áfach.
 
 Seo lúb a ritheann go deo:
 
@@ -82,7 +83,7 @@ nuair-a fíor {
 Nuair atá ríomhchlár *Setanta* ag rith, athraíonn an cnaipe
 <iron-icon class="play" icon="av:play-arrow"></iron-icon> go
 cnaipe <iron-icon class="play" icon="av:stop"></iron-icon>. Má cliceálann tú ar an cnaipe, stopfaidh
-an ríomhchlár. Beidh an cnaipe seo riachtanach le na ríomhchláir a leanas.
+an ríomhchlár. Beidh an cnaipe seo [[riachtanach|essential]] do na ríomhchláir a leanas.
 
 Anois, scríobhaimis an ríomhchlár a scríobhann "Dia duit" gach 2 soicind:
 
@@ -93,12 +94,14 @@ nuair-a fíor {
 }
 }}}
 
-Bain triail as! (Ná déan dearmad faoi an cnaipe <iron-icon class="play" icon="av:stop"></iron-icon>.
+Bain triail as! ([[Ná déan dearmad|Don&apos;t forget]] faoi an cnaipe <iron-icon class="play"
+icon="av:stop"></iron-icon>).
 
 # Ag Neadú
 
-Is féidir linn lúba a chur isteach i lúba eile! Tugaimid "lúba neadaithe" ar lúba mar seo. Tá lúba
-neadaithe an-úsáideach le haghaidh rudaí casta a dhéanamh. Féach ar an sampla seo:
+Is féidir linn lúba a chur isteach i lúba eile! Tugaimid "**[[lúba neadaithe|nested loops]]**" ar
+lúba mar seo. Tá lúba neadaithe an-úsáideach le haghaidh rudaí casta a dhéanamh. Féach ar an sampla
+seo:
 
 ## Sampla
 
@@ -156,7 +159,8 @@ Anois, sa lúb istigh tá na hathróige `dath` agus `méid` againn, agus is féi
 tharraing, ach cén áit?
 
 Chun an ciorcail a tharraing i lár an stáitse is féidir linn `fad_x` agus `fad_y` a úsáid. Chun an
-lárphointe a fháil níl le dhéanamh againn ach roinn `fad_x` agus `fad_y` faoi 2.
+[[lárphointe|midpoint]] a fháil níl le dhéanamh againn ach [[roinn|divide]] `fad_x` agus `fad_y`
+faoi 2.
 
 ```{.setanta .numberLines}
 dathanna := ["glas", "buí", "bándearg", "gorm"]
@@ -181,9 +185,9 @@ le i idir (0, fad@dathanna) {
 }
 ```
 
-Faoi dheireadh, ba chóir dúinn fan ar feadh tamaill beag tar éis dúinn an ciorcal a tharraing.
-Ba chóir dúinn é seo a dhéanamh mar mura ndéanaimid é beidh an ríomhchlár i bhfad ró thapa. Ní
-bheadh am againn chun na ciorcail ar leith a fheiceáil.
+Faoi dheireadh, ba chóir dúinn [[fan ar feadh tamaill beag|wait for a short while]] tar éis dúinn an
+ciorcal a tharraing. Ba chóir dúinn é seo a dhéanamh mar mura ndéanaimid é beidh an ríomhchlár i
+bhfad ró thapa. Ní bheadh am againn chun na ciorcail ar leith a fheiceáil.
 
 Bain triail as!
 
@@ -215,14 +219,15 @@ le i idir (0, fad@dathanna) {
 
 # Stop! {#stad}
 
-Anois déanfaimid iarracht ríomhchlár nua a chruthú a ligeann don úsáideoir liosta téacs a
-chlóscríobh go dtí go gclóscríobhann siad "Stop", ansin scríobhfaidh an ríomhchlár an liosta ar ais
-ar an gconsól. Féach ar an GIF seo:
+Anois déanfaimid iarracht ríomhchlár nua a chruthú [[a ligeann don úsáideoir|that lets the user]]
+liosta téacs a chlóscríobh go dtí go gclóscríobhann siad "Stop", ansin scríobhfaidh an ríomhchlár an
+liosta ar ais ar an gconsól. Féach ar an GIF seo:
 
 ![Ag clóscríobh liosta téacs](assets/ag-closcriobh-liosta-teacs.gif)
 
-Is féidir linn an gníomh `léigh`{.setanta} a úsáid chun ionchur an úsáideora a fháil. Tosaímis le
-lúb `nuair-a fíor`{.setanta} agus feicimid níos déanaí conas éalú ón lúb.
+Is féidir linn an gníomh `léigh`{.setanta} a úsáid chun [[ionchur an úsáideora|user input]] a fháil.
+Tosaímis le lúb `nuair-a fíor`{.setanta} agus feicimid níos déanaí
+[[conas éalú ón lúb|how to escape the loop]].
 
 ```{.setanta .numberLines}
 >-- Cruthaigh liosta folamh.
@@ -242,9 +247,9 @@ linn scoir ón lúb nuair a scríobhann an úsáideoir "Stop". Conas is féidir 
 
 ## DIY
 
-Má úsáidimid coinníoll éigin in ionad `fíor`{.setanta}, beidh muid ábalta an lúb a stopadh.
-Cruthaímis athróg nua `stop` leis an luach `bréag`{.setanta} agus bainimis úsáid as an athróg sin
-mar coinníoll an lúibe mar seo:
+Má úsáidimid coinníoll éigin [[in ionad|instead of]] `fíor`{.setanta}, beidh muid ábalta an lúb a
+stopadh. Cruthaímis athróg nua `stop` leis an luach `bréag`{.setanta} agus bainimis úsáid as an
+athróg sin mar coinníoll an lúibe mar seo:
 
 ```{.setanta .numberLines}
 >-- Cruthaigh liosta folamh.
@@ -312,11 +317,13 @@ agus ba chóir duit liosta na rudaí a scríobh tú a fheiceáil sa chonsól.
 
 ## An bealach níos fearr
 
-D'oibrigh an cód sin i gceart, ach bhí sé beagáinín casta, an bhfuil bealach níos simplí?
+D'oibrigh an cód sin [[i gceart|correctly]], ach bhí sé beagáinín casta, an bhfuil bealach níos
+simplí?
 
-Tá eochairfhocal `bris`{.setanta} ag *Setanta*, is féidir linn é a úsáid chun **bris** amach as lúb
-éigin. Nuair a léann an léirmhínitheoir *Setanta* `bris`{.setanta} stopann sé láithreach agus fágann
-sé an lúb, ansin leanann sé ar aghaidh le aon cód tar éis an lúibe.
+Tá [[eochairfhocal|keyword]] `bris`{.setanta} ag *Setanta*, is féidir linn é a úsáid chun **bris**
+amach as lúb éigin. Nuair a léann an léirmhínitheoir *Setanta* `bris`{.setanta} stopann sé
+[[láithreach|immediately]] agus fágann sé an lúb, ansin leanann sé ar aghaidh le aon cód tar éis an
+lúibe.
 
 Bain triail as anseo:
 
@@ -345,7 +352,7 @@ Bog an líne `scríobh(i)`{.setanta} ionas go scríobhann an ríomhchlár sin "5
 
 ### Ag Réitigh Ár gCód
 
-Seo é an cód a scríobhamar níos luaithe:
+Seo é an cód a scríobhamar [[níos luaithe|earlier]]:
 
 ```{.setanta .numberLines}
 >-- Cruthaigh liosta folamh.
@@ -368,8 +375,8 @@ scríobh(liosta)
 }}}
 ```
 
-Anois is féidir linn gach rud a bhaineann leis an athróg `stop` a scrios agus an focal
-`bris`{.setanta} a úsáid ina ionad. Féach ar an cód anois:
+Anois is féidir linn gach rud a [[bhaineann leis|related to]] an athróg `stop` a scrios agus an
+focal `bris`{.setanta} a úsáid ina ionad. Féach ar an cód anois:
 
 ```{.setanta .numberLines}
 >-- Cruthaigh liosta folamh.
@@ -419,15 +426,15 @@ le i idir (0, fad@dathanna) {
 Tá liosta dathanna sa ríomhchlár sin, agus péinteálann sé ciorcal ag áit randamach le gach dath sa
 liosta.
 
-Cad is féidir linn a dhéanamh más maith linn neamhaird a thabhairt ar gach dath a thosaíonn le "g"?
-Ba féidir linn ráiteas `má`{.setanta} mór a úsáid, ach bheadh sé sin an míshlachtmhar. In ionad sin
-is féidir linn `chun-cinn`{.setanta} a úsáid chun léim go dtí an gcéad dath eile má dtosaíonn an
-dath reatha le "g".
+Cad is féidir linn a dhéanamh más maith linn [[neamhaird a thabhairt|ignore]] ar gach dath a
+thosaíonn le "g"?  Ba féidir linn ráiteas `má`{.setanta} mór a úsáid, ach bheadh sé sin an
+[[míshlachtmhar|messy]]. In ionad sin is féidir linn `chun-cinn`{.setanta} a úsáid chun léim go dtí
+an gcéad dath eile má dtosaíonn an dath reatha le "g".
 
-Cuimhnigh gur féidir linn na litreacha ar leith i bpíosa téacs a roghnú le slonn innéacs, díreach
-mar a dhéanaimid le liostaí. Chun seic a dhéanamh an bhfuil an céad litir cothrom le "g", is féidir
-linn an ráiteas seo a scríobh: `má dath[0] == "g"`{.setanta}. Anois cuirimis an píosa cód seo
-isteach inár lúb:
+Cuimhnigh gur féidir linn na [[litreacha ar leith|individual letters]] i bpíosa téacs a roghnú le
+slonn innéacs, díreach mar a dhéanaimid le liostaí. Chun seic a dhéanamh an bhfuil an céad litir
+cothrom le "g", is féidir linn an ráiteas seo a scríobh: `má dath[0] == "g"`{.setanta}. Anois
+cuirimis an píosa cód seo isteach inár lúb:
 
 ```{.setanta .numberLines}
 má dath[0] == "g" {
@@ -458,8 +465,8 @@ le i idir (0, fad@dathanna) {
 
 Anois nuair a thosaíonn an dath le "g", rithfear an líne `chun-cinn`{.setanta}, ansin bogfaidh
 léirmhínitheoir *Setanta* ar ais go dtí barr an lúibe, méadóidh sé an athróg lúibe `i` agus
-leanfaidh sé ar aghaidh léis an gcéad dath eile. Bain triail as anseo, tabhair faoi deara nach
-bhfuil aon ciorcal "glas" nó "gorm"!
+leanfaidh sé ar aghaidh léis an gcéad dath eile. Bain triail as anseo, [[tabhair faoi deara|notice]]
+nach bhfuil aon ciorcal "glas" nó "gorm"!
 
 {{{s
 dathanna := ["buí", "gorm", "dubh", "dearg", "bandearg", "glas"]
