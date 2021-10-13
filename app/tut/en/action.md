@@ -171,7 +171,7 @@ a new argument, let's call it "colour", and we can use that argument instead of 
 colour. To add a new argument we can put it in between the brackets after the existing argument
 "radius". We use a comma to separate the two arguments. Here is our new code:
 
-```{.setanta. numberLines}
+```{.setanta .numberLines}
 gníomh mid_circle(radius, colour) {
     dath@stáitse(colour)
     mid_x := fad_x@stáitse / 2
