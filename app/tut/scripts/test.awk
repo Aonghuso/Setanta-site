@@ -31,11 +31,11 @@ END {
             exit 1
         }
         if (next_texts[f] != titles[nxt]) {
-            print "ERR: Next-text of", f, "is not", "\"" titles[nxt] "\""
+            print "ERR: Next-text of", f, "is", "\"" next_texts[f] "\"", ". expected", "\"" titles[nxt] "\""
             exit 1
         }
         if (prev_texts[nxt] != titles[f]) {
-            print "ERR: Prev-text of", nxt, "is not", "\"" titles[f] "\""
+            print "ERR: Prev-text of", nxt, "is", "\"" prev_texts[f] "\"", ". expected", "\"" titles[f] "\""
             exit 1
         }
     }

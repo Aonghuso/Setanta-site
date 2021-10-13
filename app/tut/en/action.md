@@ -14,7 +14,7 @@ But, we don't always have to depend on the actions that come with *Setanta*, we 
 
 ## Quick revision
 
-Actions are things like `scríobh`{.setanta} and `coladh`{.setanta}. Actions take [[**arguments**|argóintí]] and use them to perform some action.
+Actions are things like `scríobh`{.setanta} and `codladh`{.setanta}. Actions take [[**arguments**|argóintí]] and use them to perform some action.
 
 You [[call|glaoigh ar]] an action by using [[brackets|lúibíní]] `( )` and placing the arguments inside the brackets.
 
@@ -117,6 +117,7 @@ between the brackets `( )` in the defining line of the action:
 
 ```{.setanta .numberLines}
 gníomh mid_circle(radius) {
+    dath@stáitse("gorm")
     mid_x := fad_x@stáitse / 2
     mid_y := fad_y@stáitse / 2
     ciorcal@stáitse(mid_x, mid_y, 100)
@@ -128,6 +129,7 @@ use the argument. So let's replace the 100 value with `radius`.
 
 ```{.setanta .numberLines}
 gníomh mid_circle(radius) {
+    dath@stáitse("gorm")
     mid_x := fad_x@stáitse / 2
     mid_y := fad_y@stáitse / 2
     ciorcal@stáitse(mid_x, mid_y, radius)
@@ -139,6 +141,7 @@ let's try calling it with `200`{.setanta} (`mid_circle(200)`{.setanta}).
 
 {{{s
 gníomh mid_circle(radius) {
+    dath@stáitse("gorm")
     mid_x := fad_x@stáitse / 2
     mid_y := fad_y@stáitse / 2
     ciorcal@stáitse(mid_x, mid_y, radius)
@@ -152,6 +155,7 @@ need to write out all that code again.
 
 {{{s
 gníomh mid_circle(radius) {
+    dath@stáitse("gorm")
     mid_x := fad_x@stáitse / 2
     mid_y := fad_y@stáitse / 2
     ciorcal@stáitse(mid_x, mid_y, radius)
@@ -162,12 +166,34 @@ mid_circle(200)
 mid_circle(300)
 }}}
 
-## More than one argument
+But now, what if we want to be able to change the colour of the circle too? All we have to do is add
+a new argument, let's call it "colour", and we can use that argument instead of "gorm" for the
+colour. To add a new argument we can put it in between the brackets after the existing argument
+"radius". We use a comma to separate the two arguments. Here is our new code:
 
-You can expand the list of arguments to take [[as many arguments as you like|an oiread argóintí is mian leat]] by
-separating the names of the variables with commas (`,`).
+```{.setanta. numberLines}
+gníomh mid_circle(radius, colour) {
+    dath@stáitse(colour)
+    mid_x := fad_x@stáitse / 2
+    mid_y := fad_y@stáitse / 2
+    ciorcal@stáitse(mid_x, mid_y, radius)
+}
+```
 
-e.g. `gníomh i_need_3_args(arg_1, arg_2, arg_3) {}`{.setanta}
+To call this new action we have to supply two arguments, the radius and the colour. Lets change our
+previous code to draw a [[blue|gorm]], [[green|glas]] and [[red|dearg]] circle.
+
+{{{s
+gníomh mid_circle(radius, colour) {
+    dath@stáitse(colour)
+    mid_x := fad_x@stáitse / 2
+    mid_y := fad_y@stáitse / 2
+    ciorcal@stáitse(mid_x, mid_y, radius)
+}
+mid_circle(100, "gorm")
+mid_circle(200, "glas")
+mid_circle(300, "dearg")
+}}}
 
 ## Challenge
 

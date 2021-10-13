@@ -2,6 +2,8 @@
 title: Ag Lúbadh Go Deo
 prev: liostai
 prev-text: Liostaí agus Lúba
+next: gniomh
+next-text: Ní Briathra a Dhearbhaíonn Ach Gníomh
 tsn-fname: nuair-a
 ---
 
