@@ -14,7 +14,7 @@ féin a chruthú!
 
 ## Athbhreithniú
 
-Is luachanna iad gníomhartha is féidir linn a úsáid chun rudaí a dhéanamh dúinn, mar shampla is
+Is luachanna iad gníomhartha is féidir linn a úsáid chun rudaí a dhéanamh ar ár sonn, mar shampla is
 gníomhartha iad `scríobh`{.setanta} agus `codladh`{.setanta}. Glacann gníomhartha le argóintí agus
 baineann siad úsáid astu chun rud a dhéanamh.
 
@@ -29,25 +29,26 @@ Mar shampla: `aois := ceist("Cén aois thú?")`{.setanta}.
 # Ráitis "gníomh"
 
 Chun ár ngníomhartha féin a chruthú, is féidir linn úsáid a bhaint as an eochairfhocail
-`gníomh`{.setanta}. Bainimid úsáid as an ráiteas sin chun ainm ár gníomh, an liosta argóintí agus an
-iompraíocht a shainmhíniú.
+`gníomh`{.setanta}. Bainimid úsáid as an ráiteas sin chun ainm ár ngníomh, an liosta argóintí agus
+an iompraíocht a shainmhíniú.
 
 Scríobhaimid ráiteas `gníomh`{.setanta} mar seo:
 
 ```{.setanta .numberLines}
 gníomh <ainm> (<liosta argóintí>) {
-    <cód le dhéanamh>
+    >-- Cód le dhéanamh anseo
 }
 ```
 
 Cruthaíonn ráiteas `gníomh`{.setanta} gníomh dúinn leis an ainm a phiocamar. Nuair a ghlaonn tú ar
 an gníomh le roinnt argóintí, cuirtear na argóintí in athróga leis na hainmneacha a roghnaíomar.
-Ansin ritear an cód idir na lúibíní slabhracha (`{` agus `}`). Tugtar **corp an gnímh** ar cód seo.
+Ansin ritear an cód idir na lúibíní slabhracha (`{` agus `}`). Tugtar **corp an gnímh** ar an cód
+seo.
 
 Anois féachfaimid ar sampla beag. Cruthaímis gníomh `abair_dia_duit`, ní ghlacfaidh `abair_dia_duit`
 le aon argóintí, agus nuair a ghlaonn tú air scríobhfaidh sé "Dia duit" ar an gconsól.
 
-```
+```{.setanta .numberLines}
 gníomh abair_dia_duit() {
     scríobh("Dia duit")
 }
@@ -256,18 +257,18 @@ freagra](https://try-setanta.ie/editor/EhEKBlNjcmlwdBCAgIDQ3ueDCw){target="\_bla
 # Torthaí
 
 Anois féachfaimid ar conas gníomh a chruthú le toradh. Le haghaidh é sin a dhéanamh bainfimid úsáid
-as an eochairfhocail `toradh` chun ráiteas toraidh a dhéanamh mar seo:
+as an eochairfhocail `toradh`{.setanta} chun ráiteas toraidh a dhéanamh mar seo:
 
 ```{.setanta .numberLines}
 toradh <slonn>
 ```
 
-Mar shampla: `toradh 1`{.setanta}, `toradh "dia " + "duit"`{.setanta}.
+Mar shampla: `toradh 1`{.setanta} nó `toradh "dia " + "duit"`{.setanta}.
 
 Nuair a ritear ráiteas toraidh i gcorp gnímh éigin, ríomhfaidh *Setanta* luach an sloinn agus
 stopfaidh *Setanta* láithreach. Scoirfidh sé ón ghníomh agus tabharfaidh sé an luach ar ais.
 
-## Sampla
+## Sampla Gearr
 
 Seo gníomh gearr `tabhair_1`{.setanta}, níl aon cód ann ach ráiteas `toradh 1`{.setanta}.
 
