@@ -4,7 +4,7 @@ prev: nuair-a
 prev-text: Ag Lúbadh Go Deo
 ---
 
-# Ní Briathra a Dhearbhaíonn Ach Gníomh
+# [[Ní Briathra a Dhearbhaíonn Ach Gníomh|Actions speak louder than words]]
 
 Go dtí seo bhíomar ag úsáid go leor gníomhartha chun a lán rudaí difriúla a dhéanamh, ó téacs a
 léamh go cruthanna a tharraingt.
@@ -12,25 +12,26 @@ léamh go cruthanna a tharraingt.
 Tháinig gach gníomh a bhaineamar úsáid as go dtí seo le *Setanta*, ach is féidir linn ár gníomhartha
 féin a chruthú!
 
-## Athbhreithniú
+## [[Athbhreithniú|Revision]]
 
-Is luachanna iad gníomhartha is féidir linn a úsáid chun rudaí a dhéanamh ar ár sonn, mar shampla is
-gníomhartha iad `scríobh`{.setanta} agus `codladh`{.setanta}. Glacann gníomhartha le argóintí agus
-baineann siad úsáid astu chun rud a dhéanamh.
+Is luachanna iad gníomhartha is féidir linn a úsáid chun rudaí a dhéanamh
+[[ar ár son|on our behalf]], mar shampla is gníomhartha iad `scríobh`{.setanta} agus
+`codladh`{.setanta}. Glacann gníomhartha le argóintí agus baineann siad úsáid astu chun rudaí a
+dhéanamh.
 
-Glaoitear ar gníomhartha le lúibíní (`(` agus `)`), le na hargóintí eatarthu.
+Glaoitear ar gníomhartha le lúibíní (`(` agus `)`), le na hargóintí [[eatarthu|between them]].
 
 Mar shampla: `scríobh("Dia duit")`{.setanta}, `ciorcal@stáitse(100, 100, 100)`{.setanta},
 `léigh()`{.setanta}.
 
-Tá torthaí ag roinnt argóintí freisin, nuair a ghlaoitear orthu tugann siad luach éigin ar ais.
-Mar shampla: `aois := ceist("Cén aois thú?")`{.setanta}.
+Tá [[torthaí|results]] ag roinnt argóintí freisin, nuair a ghlaoitear orthu tugann siad luach éigin
+ar ais. Mar shampla: `aois := ceist("Cén aois thú?")`{.setanta}.
 
 # Ráitis "gníomh"
 
-Chun ár ngníomhartha féin a chruthú, is féidir linn úsáid a bhaint as an eochairfhocail
-`gníomh`{.setanta}. Bainimid úsáid as an ráiteas sin chun ainm ár ngníomh, an liosta argóintí agus
-an iompraíocht a shainmhíniú.
+Chun ár ngníomhartha féin a chruthú, is féidir linn úsáid a bhaint as an [[eochairfhocail|keyword]]
+`gníomh`{.setanta}. Bainimid úsáid as an [[ráiteas|statement]] sin chun ainm ár ngníomh, an liosta
+argóintí agus an [[iompraíocht|behaviour]] a [[shainmhíniú|define]].
 
 Scríobhaimid ráiteas `gníomh`{.setanta} mar seo:
 
@@ -42,8 +43,8 @@ gníomh <ainm> (<liosta argóintí>) {
 
 Cruthaíonn ráiteas `gníomh`{.setanta} gníomh dúinn leis an ainm a phiocamar. Nuair a ghlaonn tú ar
 an gníomh le roinnt argóintí, cuirtear na argóintí in athróga leis na hainmneacha a roghnaíomar.
-Ansin ritear an cód idir na lúibíní slabhracha (`{` agus `}`). Tugtar **corp an gnímh** ar an cód
-seo.
+Ansin ritear an cód idir na lúibíní slabhracha (`{` agus `}`). Tugtar
+[[**corp an gnímh**|body of the action]] ar an cód seo.
 
 Anois féachfaimid ar sampla beag. Cruthaímis gníomh `abair_dia_duit`, ní ghlacfaidh `abair_dia_duit`
 le aon argóintí, agus nuair a ghlaonn tú air scríobhfaidh sé "Dia duit" ar an gconsól.
@@ -67,11 +68,12 @@ gníomh abair_dia_duit() {
 abair_dia_duit()
 }}}
 
-Nuair a ritheann tú an ríomhchlár sin, tá súil agam go feicfidh tú "Dia duit" ar an gconsól.
+Nuair a ritheann tú an ríomhchlár sin, [[tá súil agam|I expect]] go feicfidh tú "Dia duit" ar an
+gconsól.
 
 ### Míniú
 
-Nuair a ritheann *Setanta* an líne cosúil le `abair_dia_duit()`, léimeann sé ar ais go dtí an
+Nuair a ritheann *Setanta* líne cosúil le `abair_dia_duit()`, léimeann sé ar ais go dtí an
 ráiteas "gníomh" a shainmhíníonn an gníomh agus ritheann sé an cód a scríobh tú. Sa ríomhchlár sin,
 ba é `scríobh("Dia duit")`{.setanta} an cód sin. Dá bhrí sin, scríobhann sé "Dia duit" ar an
 gconsól. Ansin nuair atá sé críochnaithe leis an gcód sa ghníomh, bogann sé ar ais go dtí an líne a
@@ -84,9 +86,9 @@ dúinn ainmneacha a roghnú do na hathróga. Nuair a glaoimid ar an gníomh le r
 luachanna na n-argóintí in athróga leis na hainmneacha a roghnaíomar agus is féidir linn na hathróga
 sin a úsáid i gcorp an gnímh.
 
-Beidh sé níos soiléire le sampla, mar sin cruthaímis gníomh anois chun ciorcal a tharraingt i lár an
-stáitse. Ar dtús, cruthaímis gníomh a tharraingíonn ciorcal gorm le ga 100, agus níos déanaí
-athróimid an gníomh chun argóintí a ghlacadh don ga agus dath an ciorcail.
+Beidh sé [[níos soiléire|clearer]] le sampla, mar sin cruthaímis gníomh anois chun ciorcal a
+tharraingt i lár an stáitse. Ar dtús, cruthaímis gníomh a tharraingíonn ciorcal gorm le ga 100, agus
+níos déanaí athróimid an gníomh chun argóintí a ghlacadh don ga agus dath an ciorcail.
 
 Seo é an gníomh simplí:
 
@@ -257,7 +259,8 @@ freagra](https://try-setanta.ie/editor/EhEKBlNjcmlwdBCAgIDQ3ueDCw){target="\_bla
 # Torthaí
 
 Anois féachfaimid ar conas gníomh a chruthú le toradh. Le haghaidh é sin a dhéanamh bainfimid úsáid
-as an eochairfhocail `toradh`{.setanta} chun ráiteas toraidh a dhéanamh mar seo:
+as an eochairfhocail `toradh`{.setanta} chun [[ráiteas toraidh|result statement]] a dhéanamh mar
+seo:
 
 ```{.setanta .numberLines}
 toradh <slonn>
@@ -265,8 +268,9 @@ toradh <slonn>
 
 Mar shampla: `toradh 1`{.setanta} nó `toradh "dia " + "duit"`{.setanta}.
 
-Nuair a ritear ráiteas toraidh i gcorp gnímh éigin, ríomhfaidh *Setanta* luach an sloinn agus
-stopfaidh *Setanta* láithreach. Scoirfidh sé ón ghníomh agus tabharfaidh sé an luach ar ais.
+Nuair a ritear ráiteas toraidh i gcorp gnímh éigin, [[ríomhfaidh *Setanta*|Setanta will compute]]
+[[luach an sloinn|the value of the expression]] agus stopfaidh *Setanta* láithreach.
+[[Scoirfidh sé ón ghníomh|It will exit the action]] agus tabharfaidh sé an luach ar ais.
 
 ## Sampla Gearr
 
@@ -292,8 +296,9 @@ Scríobhann sé "1" amach ar an gconsól, déanann sé é sin mar bhí `1` torad
 
 ### Rud tábhachtach
 
-Tabhair faoi deara anois: Nuair a shroichtear ráiteas `toradh`{.setanta}, stopann *Setanta* ar an
-toirt agus scoireann sé ón ghnímh. Mar sin, ní rithfear aon cód atá tar éis an ráitis.
+Tabhair faoi deara anois: Nuair a [[shroichtear|is reached]] ráiteas `toradh`{.setanta}, stopann
+*Setanta* [[ar an toirt|immediately]] agus scoireann sé ón ghnímh. Mar sin, ní rithfear aon cód atá
+tar éis an ráitis.
 
 Má cuirimid an líne `scríobh("Dia duit")`{.setanta} tar éis an líne `toradh 1`{.setanta} sa
 ríomhchlár agus rithimid é arís, ní feicfidh tú "Dia duit" ar an gconsól. Bain triail as:
