@@ -239,3 +239,92 @@ ciorcal_i_lár(100, "gorm")
 ciorcal_i_lár(200, "glas")
 ciorcal_i_lár(300, "dearg")
 }}}
+
+## Dúshlán
+
+Cruthaigh gníomh nua `ciorcail_rand` a ghlacann le trí argóintí `n`, `ga` agus `dath` agus
+tarraingíonn sé `n` ciorcail randamacha ar an stáitse le ga `ga` agus dath `dath`.
+
+{{{s
+gníomh ciorcail_rand() {
+}
+}}}
+
+[Cliceáil anseo le haghaidh
+freagra](https://try-setanta.ie/editor/EhEKBlNjcmlwdBCAgIDQ3ueDCw){target="\_blank"}
+
+# Torthaí
+
+Anois féachfaimid ar conas gníomh a chruthú le toradh. Le haghaidh é sin a dhéanamh bainfimid úsáid
+as an eochairfhocail `toradh` chun ráiteas toraidh a dhéanamh mar seo:
+
+```{.setanta .numberLines}
+toradh <slonn>
+```
+
+Mar shampla: `toradh 1`{.setanta}, `toradh "dia " + "duit"`{.setanta}.
+
+Nuair a ritear ráiteas toraidh i gcorp gnímh éigin, ríomhfaidh *Setanta* luach an sloinn agus
+stopfaidh *Setanta* láithreach. Scoirfidh sé ón ghníomh agus tabharfaidh sé an luach ar ais.
+
+## Sampla
+
+Seo gníomh gearr `tabhair_1`{.setanta}, níl aon cód ann ach ráiteas `toradh 1`{.setanta}.
+
+```{.setanta .numberLines}
+gníomh tabhair_1() {
+    toradh 1
+}
+```
+
+Féach anois ar cad a tharlaíonn nuair a ghlaoimid ar le `scríobh(tabhair_1())`{.setanta}.
+
+{{{
+gníomh tabhair_1() {
+    toradh 1
+}
+
+scríobh(tabhair_1())
+}}}
+
+Scríobhann sé "1" amach ar an gconsól, déanann sé é sin mar bhí `1` toradh an gnímh.
+
+### Rud tábhachtach
+
+Tabhair faoi deara anois: Nuair a shroichtear ráiteas `toradh`{.setanta}, stopann *Setanta* ar an
+toirt agus scoireann sé ón ghnímh. Mar sin, ní rithfear aon cód atá tar éis an ráitis.
+
+Má cuirimid an líne `scríobh("Dia duit")`{.setanta} tar éis an líne `toradh 1`{.setanta} sa
+ríomhchlár agus rithimid é arís, ní feicfidh tú "Dia duit" ar an gconsól. Bain triail as:
+
+{{{
+gníomh tabhair_1() {
+    toradh 1
+    scríobh("Dia duit")
+}
+
+scríobh(tabhair_1())
+}}}
+
+Ní feiceann tú "Dia duit" mar stop *Setanta* nuair a shroich sé an ráiteas toraidh.
+
+### Dúshlán
+
+Déan iarracht anois gníomh a cruthú a ghlacann lé trí uimhir agus tugann sé an ceann is mó ar ais.
+Tabhair `uas_3` ar an gníomh.
+
+Mar shampla, bá chóir go bhfuil `30` toradh `uas_3(10, 20, 30)`{.setanta} mar is é 30 an uimhir is
+mó.
+
+Tosaigh leis an cód seo:
+
+{{{
+gníomh uas_3(a, b, c) {
+    >-- Líon isteach mé
+}
+
+scríobh(uas_3(10, 20, 30))
+}}}
+
+[Cliceáil anseo le haghaidh
+freagra](https://try-setanta.ie/editor/EhEKBlNjcmlwdBCAgIDQnbaACw){target="\_blank"}
