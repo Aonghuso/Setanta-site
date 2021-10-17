@@ -1,5 +1,7 @@
 ---
 title: Ní Briathra a Dhearbhaíonn Ach Gníomh
+next: usaideach
+next-text: Roinnt Gníomhartha Úsáideacha
 prev: nuair-a
 prev-text: Ag Lúbadh Go Deo
 tsn-fname: action
