@@ -101,3 +101,60 @@ má príomha(uimhir) {
     scríobh("Ní uimhir príomha é", uimhir)
 }
 }}}
+
+#### Liostaí gan teorainn
+
+Léigh an ríomhchlár seo agus smaoinigh faoin seicheamh uimhreacha a scríobhann sé.
+
+{{{
+le i idir (0, 15) {
+    fuílleach_5 := i % 5
+    scríobh(i, " % 5 ==", fuílleach_5)
+}
+}}}
+
+
+Scríobhann an ríomhchlár sin fuílleach gach uimhir idir 0 agus 15 nuair a roinneann tú iad faoi 5.
+Má léann tú an seicheamh uimhreacha a scríobhann sé feicfidh tú an seicheamh "0", "1", "2", "3",
+"4", ansin tosaíonn sé ar ais ag "0" agus leanann sé ar aghaidh sa treo céanna: "1", "2", "3"
+"4", "0" ... srl.
+
+![Ciorcal luachanna](assets/ciorcal-inneacs.png)
+
+Má ritheann tú an ríomhchlár sin le raon uimhreacha níos mó feicfidh tú an patrún céanna.
+Níl tharlaíonn na patrún sin le `i % 5`{.setanta} amháin, má dhéanann tú an rud céanna le uimhir
+éigin `n`, gheobhaidh tú an seicheamh `0, 1, 2 ... n - 1, 0, 1, 2, ..., n - 1, ...`{.setanta} srl.
+
+![Ciorcal luachanna n](assets/ciorcal-inneacs-n-1.png)
+
+Is féidir linn an patrún seo a úsáid chun dul thar liosta arís agus arís, cosúil go liosta gan
+teorainn é:
+
+Féach ar gcód seo:
+
+{{{
+liosta := ["Gaeilge", "Béarla", "Fraincis"]
+
+le i idir (0, 10) {
+    scríobh(liosta[i])
+}
+}}}
+
+Scríobhann an ríomhchlár sin baill an liosta ach ansin baineann sé triail an ball ag an innéacs
+`4`{.setanta} a roghnú agus teipeann air mar tá `4` ró mhór. Ach, má úsáidimid an oibritheoir modulo
+`%` chun dul ar ais go `0` nuair a shroichimid deireadh an liosta beidh gach rud ceart go leor. Tá
+fad an liosta cothrom le `3`{.setanta}, dá bhrí sin beidh `i % fad@liosta`{.setanta} cothrom le
+`0`{.setanta}, `1`{.setanta} nó `2`{.setanta} i gcónaí. Bain triail as ár gcód nua:
+
+{{{
+liosta := ["Gaeilge", "Béarla", "Fraincis"]
+
+le i idir (0, 10) {
+    scríobh(liosta[i % fad@liosta])
+}
+}}}
+
+Anois ní theipeann ar an ríomhchlár nuair a shroicheann sé deireadh an liosta, in ionad sin téann
+sé ar ais go dtí an tús. Bain triail as teanga nua a chuir leis an liosta agus an cód a rith arís,
+feicfidh tú go dhéanann sé an rud céanna: rachaidh an lúb thar an liosta arís agus arís.
+

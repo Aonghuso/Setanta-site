@@ -24,7 +24,11 @@ The modulo operator takes two numbers, and returns the [[remainder|fuílleach]] 
 
 e.g. `7 % 2`{.setanta} is equal to 1, because 7 has remainder 1 when divided by 2. `11 % 4` has remainder 3, because 11 has remainder 3 when divided by 4.
 
-This operator is extremely useful because it allows us to check lots of things. [[For example|Mar shampla]], we can check if a number is [[odd|corr]] or [[even|réidh]] by checking if has remainder 1 or 0 when divided by 2. Try it out here!
+This operator is extremely useful because it allows us to check lots of things.
+
+#### Odd or Even?
+
+[[For example|Mar shampla]], we can check if a number is [[odd|corr]] or [[even|réidh]] by checking if has remainder 1 or 0 when divided by 2. Try it out here!
 
 {{{
 le i idir (0, 10) {
@@ -35,6 +39,8 @@ le i idir (0, 10) {
     }
 }
 }}}
+
+#### Is it prime?
 
 We can also use `%` to check if one number is divisible by another. A number is divisible by another number if it leaves 0 remainder when you divide by it. e.g. `10 % 2`{.setanta} and `10 % 5`{.setanta} are both 0 because 10 is divisible by 2 and 5.
 
@@ -79,6 +85,60 @@ má is_prime(uimhir) {
     scríobh(uimhir, "is not prime")
 }
 }}}
+
+#### Infinite lists
+
+Read this program and think about the list of numbers it writes.
+
+{{{
+le i idir (0, 15) {
+    remainder_5 := i % 5
+    scríobh(i, " % 5 ==", remainder_5)
+}
+}}}
+
+This program writes the remainder of every number between 0 and 15 after division by 5. If you read
+the sequence of numbers it writes you'll see the sequence "0", "1", "2", "3", "4", and then it
+starts again at "0" and continues in the same way: "1", "2", "3", "4", "0" ... etc.
+
+![Circle of values](../ga/assets/ciorcal-inneacs.png)
+
+If you run that program with a bigger range of numbers, you'll see the same [[pattern|patrún]]. This
+pattern doesn't only happen with `i % 5`{.setanta}, if you do the same thing with some number `n`
+you'll get the sequence `0, 1, 2 ... n - 1, 0, 1, 2, ..., n - 1, ...`{.setanta} etc.
+
+![Circle of values for n](assets/ciorcal-inneacs-n-1.png)
+
+We can use this pattern to go through a list again and again, as if it was
+[[infinite|gan teoirainn]].
+
+Look at this code:
+
+{{{
+list := ["Irish", "English", "French"]
+
+le i idir (0, 10) {
+    scríobh(list[i])
+}
+}}}
+
+That program write the members of the list, but then it tries to the member at index `4`{.setanta}
+and it [[fails|teipeann air]] because `4`{.setanta} is too big. But, if we use the modulo operator
+`%` to go back around to `0`{.setanta} when we reach the end of the list everything will be ok. The
+length of the list is equal to 3 so `i % fad@list`{.setanta} will always be equal to `0`{.setanta},
+`1`{.setanta} or `2`{.setanta}. Try out our new code:
+
+{{{
+list := ["Irish", "English", "French"]
+
+le i idir (0, 10) {
+    scríobh(list[i % fad@list])
+}
+}}}
+
+Now the program doesn't fail when it gets to the end of the list, instead it goes back to the start.
+Try adding a new [[language|teanga]] to the list and run the code again, you'll see that it does the
+same thing, it goes through the list again and again.
 
 ### Integer division
 
