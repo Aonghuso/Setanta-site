@@ -14,7 +14,7 @@ nóiméad agus féachaint ar cúpla gníomhartha agus oibritheoirí úsáideacha
 
 Chonaiceamar níos luaithe sa teagasc seo na hoibritheoirí `+`, `-`, `*` agus `/`. Tá dhá
 oibritheoirí matamaitice eile ag *Setanta*, an oibritheoir "modulo" (`%`) agus an oibritheoir
-roinnt-slanúimhreacha (`//`).
+roinnt-slánuimhreacha (`//`).
 
 ### Modulo
 
@@ -158,3 +158,51 @@ Anois ní theipeann ar an ríomhchlár nuair a shroicheann sé deireadh an liost
 sé ar ais go dtí an tús. Bain triail as teanga nua a chuir leis an liosta agus an cód a rith arís,
 feicfidh tú go dhéanann sé an rud céanna: rachaidh an lúb thar an liosta arís agus arís.
 
+### [[Roinnt Slánuimhreacha|Integer Division]]
+
+Níos luaithe sa teagasc seo, chonaiceamar an oibritheoir roinnte (`/`): mar shampla, `10 / 5 ==
+2`{.setanta}.
+
+Tá oibritheoir eile againn atá an cosúil leis an oibritheoir roinnte, an oibritheoir roinnt
+slánuimhreacha: `//`. Oibríonn sé mar an gcéanna, ach tar éis dó na huimhreacha a roinnt slánaíonn
+sé an uimhir síos. Dá bhrí sin faigheann tú slánuimhir i gcónaí.
+
+Mar shampla, tá `5 / 2`{.setanta} cothrom le `2.5`{.setanta}, ach tá `5 // 2`{.setanta} cothrom le
+`2`{.setanta}; Tá `10 / 3`{.setanta} cothrom le `3.333`{.setanta} ach tá `10 // 3`{.setanta} cothrom
+le `3`{.setanta}.
+
+## Gníomhartha Matamaitice
+
+Chonaiceamar roinnt gníomhartha matamaitice cheanna sa teagasc seo, go háirithe
+`rand@mata`{.setanta} agus `slánuimh_rand@mata`{.setanta}, áfach, tá a lán níos mó gníomhartha agus
+luachanna matamaitice ar fáil i *Setanta*.
+
+Seo liosta gearr do na gníomhartha agus luachanna atá ar fáil, bá chóir duit `@mata`{.setanta} a
+úsáid chun iad a roghnú, mar shampla `fréamh@mata`{.setanta}.
+
+### Luachanna
+
+| Ainm | Cur síos | Sampla
+|:------|:-----:|----:|
+| `pí` | An tairiseach Pí (3.1415...) | `2 * pí@mata * r`{.setanta} |
+| `e` | An tairiseach e (an uimhir Euler) (2.71828...) | `cmhcht@mata(e@mata, 2)`{.setanta} |
+
+### Gníomhartha
+
+| Ainm | Cur síos | Sampla
+|:------|:-----:|----:|
+| `fréamh` | An fréamh cearnach (√) | `fréamh@mata(4) == 2`{.setanta} |
+| `cearn` | Feidhm cearnach (`x²`) |  `cearn@mata(2) == 4`{.setanta} |
+| `dearbh` | Feidhm Dearbhluacha (`|x|`) | `dearbh@mata(-2) == 2`{.setanta} |
+| `eas` | Feidhm easpónantúile (`e^x`) | `eas@mata(1) == e@mata`{.setanta} |
+| `cmhcht` | Feidhm cumhachta (`x^y`) | `cmhcht@mata(2, 4) == 16`{.setanta} |
+| `log` | Feidhm logartaim | `log@mata(2)`{.setanta} |
+| `logb` | Logartam i mbun éigin | `logb@mata(16, 2) == 4`{.setanta} |
+| `sin`  | Feidhm Sine | `sin@mata(pi@mata/2)`{.setanta} |
+| `cos`  | Feidhm Cosine | `cos@mata(0)`{.setanta} |
+| `tan`  | Feidhm Tangaint | `tan@mata(pi@mata)`{.setanta} |
+| `asin` | Feidhm sine inbhéarta | `asin@mata(0)`{.setanta} |
+| `acos` | Feidhm cosine inbhéarta | `acos@mata(pi@mata)`{.setanta} |
+| `atan` | Feidhm tangaint inbhéarta | `atan@mata(0)`{.setanta} |
+| `rand` | Uimhir randamach idir 0 agus 1 | `rand@mata()`{.setanta} |
+| `slánuimh_rand` | Slánuimhir randamach i raon éigin | `slánuimh_rand@mata(5, 10)`{.setanta} |

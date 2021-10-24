@@ -110,7 +110,7 @@ you'll get the sequence `0, 1, 2 ... n - 1, 0, 1, 2, ..., n - 1, ...`{.setanta} 
 ![Circle of values for n](assets/ciorcal-inneacs-n-1.png)
 
 We can use this pattern to go through a list again and again, as if it was
-[[infinite|gan teoirainn]].
+[[infinite|gan teorainn]].
 
 Look at this code:
 
@@ -163,7 +163,7 @@ Here is a quick [[list|liosta]] of actions and [[values|luachanna]] you can acce
 
 | Name | Description | Example |
 |:------|:-----:|----:|
-| `pí` | Pi [[constant|tairiseach]] (3.1415...) | `pi@mata`{.setanta} |
+| `pí` | Pi [[constant|tairiseach]] (3.1415...) | `pí@mata`{.setanta} |
 | `e` | e constant (2.71828..) | `e@mata`{.setanta} |
 
 ### Actions
@@ -172,10 +172,10 @@ Here is a quick [[list|liosta]] of actions and [[values|luachanna]] you can acce
 |:------|:-----:|----:|
 | `fréamh` | Square [[root|fréamh]] | `fréamh@mata(4) == 2`{.setanta} |
 | `cearn` | Square [[function|feidhm]] (`x * x`)  |  `cearn@mata(2) == 4`{.setanta} |
-| `dearbh` | Absolute value | `abs@mata(-2) == 2`{.setanta} |
+| `dearbh` | Absolute value | `dearbh@mata(-2) == 2`{.setanta} |
 | `eas` | Exponential (`e^x`) | `eas@mata(1) == e@mata`{.setanta} |
 | `cmhcht` | [[Power|cumhacht]] (`x^y`) | `cmhcht@mata(2, 4) == 16`{.setanta} |
-| `log` | Logarithm | `log@mata(2)`{.setanta} |
+| `log` | [[Logarithm|logartam]] | `log@mata(2)`{.setanta} |
 | `logb` | Logarithm in some base | `logb@mata(16, 2) == 4`{.setanta} |
 | `sin`  | Sine                  | `sin@mata(pi@mata/2)`{.setanta} |
 | `cos`  | Cosine             | `cos@mata(0)`{.setanta} |
