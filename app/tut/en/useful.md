@@ -241,7 +241,7 @@ scríobh("Your first name is:", names[0])
 scríobh("Your second name is:", names[1])
 }}}
 
-![Full name demo](assets/full-name.gif)
+![Full name demo](assets/roinn-name.gif)
 
 ## Cuid / Part
 

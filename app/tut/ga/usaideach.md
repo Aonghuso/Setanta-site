@@ -206,3 +206,105 @@ Seo liosta gearr do na gníomhartha agus luachanna atá ar fáil, bá chóir dui
 | `atan` | Feidhm tangaint inbhéarta | `atan@mata(0)`{.setanta} |
 | `rand` | Uimhir randamach idir 0 agus 1 | `rand@mata()`{.setanta} |
 | `slánuimh_rand` | Slánuimhir randamach i raon éigin | `slánuimh_rand@mata(5, 10)`{.setanta} |
+
+# Téacs
+
+Tá a fhios againn faoi conas `+` a úsáid chun dhá píosa téacs a chur le chéile, conas
+`fad`{.setanta} a úsáid chun fad an phíosa téacs a fháil agus conas slonn innéacs a úsáid chun
+carachtair an píosa téacs a roghnú. Áfach, is féidir linn a lán níos mó a dhéanamh le téacs.
+Féachfaimid anois ar roinnt gníomhartha úsáideach:
+
+## `go_téacs`
+
+Is féidir linn `go_téacs` a úsáid chun aon luach a athrú go léiriú téacsúil. Mar shampla, tá
+`go_téacs([1, 2, 3])`{.setanta} cothrom le `"[1, 2, 3]"`{.setanta} agus tá
+`go_téacs(scríobh)`{.setanta} cothrom le `"<gníomh scríobh>"`{.setanta}.
+
+## Athchuir
+
+Is féidir linn an gníomh `athchuir` a úsáid chun píosaí téacs a athrú go píosaí téacs eile. Mar
+shampla ba féidir linn aghaidh shona ":)" a chuir i bpíosa téacs in ionad gach aghaidh brónach
+":(".
+
+Cuimhnigh anois caithfimid "@" a úsáid le píosa téacs chun fad an píosa a téacs a fháil mar seo:
+`fad@"Sligeach"`{.setanta}. Sa chaoi chéanna, caithfimid "@" a úsáid chun `athchuir` a úsáid.
+
+Seo cúpla sampla conas `athchuir` a úsáid:
+
+{{{
+ár_téacs := "Dia duit :("
+
+>-- Cuir ":)" in ionad ":(" san athróg ár_téacs
+scríobh(athchuir@ár_téacs(":(", ":)"))
+
+>-- Cuir "Slán" in ionad "Dia duit" san athróg ár_téacs
+scríobh(athchuir@ár_téacs("Dia duit", "Slán"))
+}}}
+
+## Roinn
+
+Is féidir linn an gníomh `roinn` a úsáid chun píosa téacs a roinn i fo-píosaí. Is féidir linn
+carachtar éigin a roghnú agus nuair a glaoimid ar `roinn` leis an gcarachtar, faighimid ar ais
+liosta le gach cuid den píosa téacs atá scartha óna gcéile leis an gcarachtar sin.
+
+Mar shampla, is féidir linn `roinn` a úsáid le camóg (",") chun píosa téacs cosúil le
+`"Setanta,Python,Java"`{.setanta} a roinn agus an liosta `["Setanta", "Python", "Java"]`{.setanta} a
+fháil. Is féidir linn `roinn` a úsáid le spás (" ") chun abairt éigin a roinn ina fhocail ar leith.
+
+Bain triail as an ríomhchlár seo:
+
+{{{
+>-- Faigh ainm iomlán an úsáideora
+ainm_iomlán := ceist("Cad é d'ainm iomlán?")
+
+>-- Úsáid roinn le spás chun an ainm iomlán a roinn.
+ainmneacha := roinn@ainm_iomlán(" ")
+
+scríobh("Is é", ainmneacha[0], "do chéadainm")
+scríobh("Is é", ainmneacha[1], "do sloinne")
+}}}
+
+![Taispeántas](assets/roinn-ainm.gif)
+
+## Cuid
+
+Leis an gníomh `cuid`, is féidir linn cuid a bhaint amach as píosa téacs. Glacann an gníomh le 2
+innéacs mar argóintí agus tugann sé an fo-píosa téacs idir na innéacs sin. (Cuimsíonn sé an chéad
+innéacs, ach ní chuimsíonn sé an dara cheann).
+
+Mar shampla: Tá `cuid@"Setanta"(1, 4)`{.setanta} cothrom le `"eta"`{.setanta} mar is é "eta" an
+téacs idir an innéacs 1 agus 4 i "Setanta". (S**eta**nta).
+
+## go_liosta
+
+Glacann an gníomh `go_liosta` le píosa téacs, agus tugann sé liosta ar ais le gach carachtar ón
+bpíosa téacs ar leith. Mar shampla: Tá `go_liosta("Setanta")`{.setanta} cothrom le `["S", "e", "t",
+"a", "n", "t", "a"]`{.setanta}.
+
+# Liostaí
+
+Oibríonn roinnt gníomhartha téacs le liostaí freisin, mar shampla `cuid`, ach tá roinnt gníomhartha
+breise ag liostaí:
+
+## Sórtáil
+
+Is féidir an gníomh `sórtáil` a úsáid chun liosta a sórtáil (mar a shamhlófá). Cuireann `sórtáil` an
+liosta in ord méadaitheach. Mar shampla tá `sórtáil@[1, 3, 2]`{.setanta} cothrom le `[1, 2,
+3]`{.setanta}.
+
+**NB: Tugann `sórtáil` an liosta sórtáilte ar ais, ach athráionn sé an liosta freisin. Ní cruthaíonn
+sé liosta nua: athráíonn sé ord an liosta go díreach.**
+
+
+## Nasc
+
+Déanann an gníomh `nasc` an rud contrártha den gníomh `roinn`. Cruthaíonn sé píosa téacs ó liosta.
+Glacann sé le carachtar éigin agus cruthaíonn sé píosa téacs ó liosta, leis an gcarachtar sin idir
+gach ball den liosta.
+
+Mar shampla, tá `nasc@[1, 2, 3](", ")`{.setanta} cothrom le `"1, 2, 3"`{.setanta}.
+
+# An Doiciméadacht
+
+Tá an liosta iomlán de na gníomhartha agus luachanna ar fáil ar
+[docs.try-setanta.ie](https://docs.try-setanta.ie).
