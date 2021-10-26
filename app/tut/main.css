@@ -55,6 +55,8 @@ html {
     border: 1px solid transparent;
     color: var(--theme-text-primary);
     display: inline-block;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 #TOC a:hover, #all-toc a:hover {
     border: 1px solid var(--theme-accent);
@@ -156,8 +158,36 @@ figure > figcaption {
 }
 
 /*inline source code*/
-p code, li code {
+p code, li code, table code {
     padding: 2px;
     border-radius: 5px;
     border: 1px solid var(--theme-divider);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border-left: 1px solid var(--theme-divider);
+    border-right: 1px solid var(--theme-divider);
+
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+th:first-child, td:first-child {
+    border-left: none;
+}
+
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+tr.header {
+    border-bottom: 1px solid var(--theme-divider);
+}
+
+th code {
+    font-weight: normal;
 }
