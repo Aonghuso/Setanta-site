@@ -196,23 +196,38 @@ Seo liosta gearr do na gníomhartha agus luachanna atá ar fáil, bá chóir dui
 
 ### Gníomhartha
 
-| Ainm | Cur síos | Sampla
-|:------|:-----:|----:|
-| `fréamh` | An [[fréamh cearnach|square root]] (√) | `fréamh@mata(4) == 2`{.setanta} |
-| `cearn` | Feidhm cearnach (`x²`) |  `cearn@mata(2) == 4`{.setanta} |
-| `dearbh` | Feidhm [[dearbhluacha|absolute value]] (`|x|`) | `dearbh@mata(-2) == 2`{.setanta} |
-| `eas` | Feidhm [[easpónantúile|exponential]] (`e^x`) | `eas@mata(1) == e@mata`{.setanta} |
-| `cmhcht` | Feidhm [[cumhachta|power]] (`x^y`) | `cmhcht@mata(2, 4) == 16`{.setanta} |
-| `log` | Feidhm [[logartaim|logarithm]] | `log@mata(2)`{.setanta} |
-| `logb` | [[Logartam i mbun éigin|logarithm in some base]] | `logb@mata(16, 2) == 4`{.setanta} |
-| `sin`  | Feidhm Sine | `sin@mata(pi@mata/2)`{.setanta} |
-| `cos`  | Feidhm Cosine | `cos@mata(0)`{.setanta} |
-| `tan`  | Feidhm [[Tangaint|Tangent]] | `tan@mata(pi@mata)`{.setanta} |
-| `asin` | Feidhm sine [[inbhéarta|inverse]] | `asin@mata(0)`{.setanta} |
-| `acos` | Feidhm cosine inbhéarta | `acos@mata(pi@mata)`{.setanta} |
-| `atan` | Feidhm tangaint inbhéarta | `atan@mata(0)`{.setanta} |
-| `rand` | Uimhir randamach idir 0 agus 1 | `rand@mata()`{.setanta} |
-| `slánuimh_rand` | Slánuimhir randamach i raon éigin | `slánuimh_rand@mata(5, 10)`{.setanta} |
+| Ainm | Cur Síos agus Sampla |
+|:------|:-----:|
+| `fréamh` | An [[fréamh cearnach|square root]] (√) |
+|          | **m.sh.** `fréamh@mata(4) == 2`{.setanta} |
+| `cearn` | [[Feidhm|function]] cearnach (`x²`) |
+|         | **m.sh.** `cearn@mata(2) == 4`{.setanta} |
+| `dearbh` | Feidhm [[dearbhluacha|absolute value]] (`|x|`) |
+|          | **m.sh.** `dearbh@mata(-2) == 2`{.setanta} |
+| `eas` | Feidhm [[easpónantúile|exponential]] (`e^x`) |
+|       | **m.sh.** `eas@mata(1) == e@mata`{.setanta} |
+| `cmhcht` | Feidhm [[cumhachta|power]] (`x^y`) |
+|          | **m.sh.** `cmhcht@mata(2, 4) == 16`{.setanta} |
+| `log` | Feidhm [[logartaim|logarithm]] |
+|       | **m.sh.** `log@mata(2)`{.setanta} |
+| `logb` | [[Logartam i mbun éigin|logarithm in some base]] |
+|        | **m.sh.** `logb@mata(16, 2) == 4`{.setanta} |
+| `sin`  | Feidhm Sine |
+|        | **m.sh.** `sin@mata(pi@mata/2)`{.setanta} |
+| `cos`  | Feidhm Cosine |
+|        | **m.sh.** `cos@mata(0)`{.setanta} |
+| `tan`  | Feidhm [[Tangaint|Tangent]] |
+|        | **m.sh.** `tan@mata(pi@mata)`{.setanta} |
+| `asin` | Feidhm sine [[inbhéarta|inverse]] |
+|        | **m.sh.** `asin@mata(0)`{.setanta} |
+| `acos` | Feidhm cosine inbhéarta |
+|        | **m.sh.** `acos@mata(pi@mata)`{.setanta} |
+| `atan` | Feidhm tangaint inbhéarta |
+|        | **m.sh.** `atan@mata(0)`{.setanta} |
+| `rand` | Uimhir randamach idir 0 agus 1 |
+|        | **m.sh.** `rand@mata()`{.setanta} |
+| `slánuimh_rand` | Slánuimhir randamach i raon éigin |
+|                 | **m.sh.** `slánuimh_rand@mata(5, 10)`{.setanta} |
 
 # Téacs
 
