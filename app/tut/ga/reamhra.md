@@ -14,7 +14,10 @@ conas a oibríonn Gaeilge leis.
 
 Níl ach cúpla rudaí le míniú sula mbeidh tú réidh le tosú.
 
-## Aistriúcháin
+## Teangacha
+
+Tá an teagasc seo ar fáil as Gaeilge agus as Béarla. Cliceáil ar an cnaipe <img
+src="../translate-icon.svg" style="height: 2em"/> chun dul go dtí an leagan Béarla.
 
 Má fheiceann tú focal le folíne mar [[seo|D'aimsigh tú mé!]], is focal é le
 [[haistriúchán|translation]].  Cuir do luch thar an focal nó cliceáil air chun an t-aistriúchán a

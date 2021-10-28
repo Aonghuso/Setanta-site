@@ -13,7 +13,10 @@ tsn-fname: reamhra
 
 There's just a few things to cover before you're [[ready|réidh]] to start!
 
-## Translations
+## Languages
+
+This tutorial is available in English and in Irish, use the <img src="../translate-icon.svg"
+style="height: 2em"/> button at the top of the page to switch between languages.
 
 If you see a word with an underline like [[this|you found me]], it's a word with a
 [[translation|aistriúchán]].
