@@ -2,6 +2,7 @@
 title: Ag Lúbadh Go Deo
 prev: liostai
 prev-text: Liostaí agus Lúba
+tsn-fname: nuair-a
 ---
 
 # Lúba "Nuair-a"
