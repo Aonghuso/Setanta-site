@@ -4,6 +4,7 @@ next: game-time
 next-text: Game Time!
 prev: action
 prev-text: Time for Action
+tsn-fname: usaideach
 ---
 
 # Maths Tips

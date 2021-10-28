@@ -2,6 +2,7 @@
 title: Roinnt Gníomhartha Úsáideacha
 prev: gniomh
 prev-text: Ní Briathra a Dhearbhaíonn Ach Gníomh
+tsn-fname: useful
 ---
 
 # Mata
