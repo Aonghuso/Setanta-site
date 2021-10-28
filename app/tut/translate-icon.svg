@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="38.933mm" height="33.663mm" version="1.1" viewBox="0 0 38.933 33.663" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <marker id="marker1208" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Lend" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-75.888 -101.19)">
+  <g>
+   <circle cx="85.255" cy="110.56" r="9.2698" fill="#005005" stroke="#005005" stroke-width=".19473"/>
+   <circle cx="105.45" cy="125.49" r="9.2698" fill="#651fff" stroke="#651fff" stroke-width=".19473"/>
+   <g fill="#fff" stroke-width=".24278" aria-label="EN">
+    <path d="m79.503 107.02h4.4763v0.80611h-3.5184v2.0959h3.3714v0.8061h-3.3714v2.5653h3.6038v0.80611h-4.5616z"/>
+    <path d="m85.649 107.02h1.2898l3.1391 5.9225v-5.9225h0.9294v7.0795h-1.2898l-3.1391-5.9225v5.9225h-0.9294z"/>
+   </g>
+   <g fill="#fff" stroke-width=".24278" aria-label="GA">
+    <path d="m103.92 128.02v-1.9015h-1.5648v-0.78714h2.5132v3.0395q-0.55479 0.39357-1.2234 0.59747-0.66859 0.19915-1.4273 0.19915-1.6596 0-2.5985-0.96733-0.93414-0.97207-0.93414-2.7028 0-1.7355 0.93414-2.7028 0.93888-0.97207 2.5985-0.97207 0.6923 0 1.3135 0.1707 0.62592 0.17071 1.1523 0.50263v1.0195q-0.53108-0.45048-1.1286-0.67808-0.59747-0.22761-1.2566-0.22761-1.2993 0-1.9536 0.7255-0.64963 0.72549-0.64963 2.1623 0 1.432 0.64963 2.1575 0.65437 0.7255 1.9536 0.7255 0.50737 0 0.90568-0.0854 0.39832-0.0901 0.71602-0.27503z"/>
+    <path d="m108.98 122.89-1.2993 3.5232h2.6033zm-0.54057-0.94362h1.0859l2.6981 7.0795h-0.99578l-0.64489-1.8161h-3.1912l-0.64489 1.8161h-1.01z"/>
+   </g>
+  </g>
+  <path d="m95.295 102.42a15.781 15.781 0 0 1 15.726 13.065" fill="none" marker-end="url(#Arrow1Lend)" stroke="#000" stroke-width=".24316"/>
+  <path transform="scale(-1)" d="m-96.69-134.24a15.781 15.781 0 0 1 15.726 13.065" fill="none" marker-end="url(#marker1208)" stroke="#000" stroke-width=".24316"/>
+ </g>
+</svg>

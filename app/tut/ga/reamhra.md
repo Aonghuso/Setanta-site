@@ -2,6 +2,7 @@
 title: Réamhrá Teagaisc
 next: cad-e-riomhchlaru
 next-text: Cad é Ríomhchlárú?
+tsn-fname: intro
 ---
 
 # Fáilte!

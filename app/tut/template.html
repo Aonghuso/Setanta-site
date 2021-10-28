@@ -70,6 +70,11 @@ $if(title)$
 $if(subtitle)$
         <p class="subtitle">$subtitle$</p>
 $endif$
+$if(tsn-fname)$ $-- tsn-fname is the file to link as a translation
+        <a id="translate-icon" href="../$altlang$/$tsn-fname$.html">
+            <img src="../translate-icon.svg"></img>
+        </a>
+$endif$
 $for(author)$
         <p class="author">$author$</p>
 $endfor$

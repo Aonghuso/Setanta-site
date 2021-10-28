@@ -85,6 +85,10 @@ section.level2 > h2 {
     border-bottom: 1px solid var(--theme-divider);
 }
 #title-block-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
     color: var(--theme-primary);
     background: white;
@@ -92,6 +96,9 @@ section.level2 > h2 {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     padding: 8px;
     margin: 8px 0 8px 0;
+}
+.title {
+    flex-grow: 1;
 }
 .play {
     background-color: var(--theme-accent);
@@ -190,4 +197,20 @@ tr.header {
 
 th code {
     font-weight: normal;
+}
+
+#translate-icon {
+    height: 3.5em;
+    padding: 2px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+#translate-icon:hover {
+    border: 1px solid var(--theme-accent);
+    background-color: var(--offwhite);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#translate-icon img {
+    height: 100%;
 }

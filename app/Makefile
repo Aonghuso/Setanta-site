@@ -35,7 +35,8 @@ TUT_TEMPLATE_SRC_FILES=$(wildcard ${TUT_SRC_DIR}/*.html) \
 TUT_OUT_FILES=${TUT_SRC_ASSETS:${TUT_SRC_DIR}/%=${TUT_OUT_DIR}/%} \
 	${TUT_SRC_EN_MD:${TUT_SRC_DIR}/%.md=${TUT_OUT_DIR}/%.html} \
 	${TUT_SRC_GA_MD:${TUT_SRC_DIR}/%.md=${TUT_OUT_DIR}/%.html} \
-	${TUT_OUT_DIR}/main.css
+	${TUT_OUT_DIR}/main.css \
+	${TUT_OUT_DIR}/translate-icon.svg
 
 tut-all: ${TUT_OUT_FILES}
 
@@ -54,13 +55,15 @@ ${TUT_OUT_DIR}/%: ${TUT_SRC_DIR}/%
 .SECONDEXPANSION:
 PERCENT := %
 ${TUT_OUT_DIR}/en/%.html: LANG=en
+${TUT_OUT_DIR}/en/%.html: ALTLANG=ga
 ${TUT_OUT_DIR}/ga/%.html: LANG=ga
+${TUT_OUT_DIR}/ga/%.html: ALTLANG=en
 ${TUT_OUT_DIR}/%.html: ${TUT_SRC_DIR}/%.md \
 		$$(patsubst ${TUT_OUT_DIR}/$${PERCENT}, ${TUT_BUILD_DIR}/$${PERCENT}/templates/all-toc.html, $$(@D)) \
 		${TUT_TEMPLATE_SRC_FILES}
 	@mkdir -p ${@D}
 	awk -f tut/scripts/proc.awk $< | pandoc -s --defaults ${TUT_SRC_DIR}/defaults.yaml \
-		--data-dir ${TUT_BUILD_DIR}/${LANG} -V lang=${LANG} -o $@
+		--data-dir ${TUT_BUILD_DIR}/${LANG} -V lang=${LANG} -V altlang=${ALTLANG} -o $@
 
 ## Typescript Compilation
 
