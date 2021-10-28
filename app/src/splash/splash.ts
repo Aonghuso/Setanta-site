@@ -72,14 +72,15 @@ class Splash extends LitElement {
         }
         .button {
             font-size: 1.2rem;
-            padding: .5rem 1.1rem .4rem;
+            padding: .5rem;
             border: 1px solid black;
             border-radius: 1rem;
             text-decoration: none;
             color: black;
-            display: flex;
-            flex-direction: column;
             transition: all 0.08s ease-out;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
         .button span {
             text-align: center;
@@ -99,6 +100,10 @@ class Splash extends LitElement {
         }
         .button:hover hr {
             border-top: 1px solid var(--theme-accent);
+        }
+        .button-text {
+            display: flex;
+            flex-direction: column;
         }
         .bearla {
             font-style: italic;
@@ -155,9 +160,12 @@ class Splash extends LitElement {
         #try-button:hover {
             cursor: pointer;
         }
-        #down-arrow {
+        .button-icon {
             height: 3rem;
             width: 3rem;
+            margin-right: 4px;
+        }
+        #down-arrow {
             color: var(--theme-accent);
         }
         .play-icon {
@@ -201,19 +209,29 @@ class Splash extends LitElement {
     private buttons(): TemplateResult {
         return html`<div class="buttons horizontal-wrap">
     <a class="button" href="/tut/en/intro.html">
-        <span>Foghlaim Setanta</span>
-        <hr/>
-        <span class="bearla">Learn Setanta</span>
+        <img class="button-icon" src="assets/en-icon.svg"/>
+        <div class="button-text">
+            <span>Foghlaim Setanta (Béarla)</span>
+            <hr/>
+            <span class="bearla">Learn Setanta (English)</span>
+        </div>
+    </a>
+    <a class="button" href="/tut/ga/reamhra.html">
+        <img class="button-icon" src="assets/ga-icon.svg"/>
+        <div class="button-text">
+            <span>Foghlaim Setanta (Gaeilge)</span>
+            <hr/>
+            <span class="bearla">Learn Setanta (Irish)</span>
+        </div>
     </a>
     <a class="button" href="/editor">
-        <span>Oscail an eagarthóir</span>
-        <hr/>
-        <span class="bearla">Open the editor</span>
-    </a>
-    <a class="button" href="https://docs.try-setanta.ie">
-        <span>Léigh na doiciméid</span>
-        <hr/>
-        <span class="bearla">Read the docs</span>
+        <iron-icon class="button-icon" icon="icons:create">
+        </iron-icon>
+        <div class="button-text">
+            <span>Oscail an eagarthóir</span>
+            <hr/>
+            <span class="bearla">Open the editor</span>
+        </div>
     </a>
 </div>`;
     }
@@ -228,9 +246,9 @@ class Splash extends LitElement {
                 </div>
                 ${this.buttons()}
                 <div id="try-button" class="button" @click="${this.scrollDown}">
-                    <iron-icon id="down-arrow" icon="icons:arrow-downward">
+                    <iron-icon id="down-arrow" class="button-icon" icon="icons:arrow-downward">
                     </iron-icon>
-                    <div>
+                    <div class="button-text">
                         Trial gearr
                         <hr/>
                         <span class="bearla">Quick try</span>
