@@ -85,12 +85,16 @@ Ba chóir go mbeadh ciorcal dearg le fheiceáil.
 
 ![Ciorcal Dearg](../en/assets/circle-red.gif)
 
-<!-- TODO(#11) Support try-setanta.ie/eagarthoir --> # try-setanta.ie/editor
+
+# try-setanta.ie <!-- TODO(#11) Support try-setanta.ie/eagarthoir -->
 
 Is leaganacha beaga den [[phríomh-eagarthóir|main editor]] ar try-setanta.ie iad na heagarthóirí
 atáimid ag úsáid sa teagasc seo. Más mhaith leat triail a bhaint as do chód ar scáileán níos mó, nó
 do chód a shábháil agus a roinnt le daoine eile, ba chóir duit dul go
 [try-setanta.ie/editor](https://try-setanta.ie/editor) agus triail a bhaint as an príomh-eagarthóir.
+
+Tá níos mó doiciméadacht faoi *Setanta* ar fáil ar
+[docs.try-setanta.ie](https://docs.try-setanta.ie)
 
 # Tosaímis!
 
