@@ -4,6 +4,7 @@ next: take-the-stage
 next-text: Take the Stage!
 prev: intro
 prev-text: Tutorial Introduction
+tsn-fname: cad-e-riomhchlaru
 ---
 # Programming is...
 

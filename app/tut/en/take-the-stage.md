@@ -4,6 +4,7 @@ next: decision-time
 next-text: It's decision time
 prev: what-is-programming
 prev-text: What is programming?
+tsn-fname: an-staitse
 ---
 
 # Lights, Camera Actions!

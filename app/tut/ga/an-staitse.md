@@ -4,6 +4,7 @@ next: roghanna
 next-text: Roghanna agus Cinntí
 prev: cad-e-riomhchlaru
 prev-text: Cad é Ríomhchlárú?
+tsn-fname: take-the-stage
 ---
 
 # Gníomhartha

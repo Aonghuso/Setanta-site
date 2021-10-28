@@ -4,6 +4,7 @@ next: nuair-a
 next-text: In the Loop
 prev: decision-time
 prev-text: It's decision time
+tsn-fname: liostai
 ---
 
 # Lists

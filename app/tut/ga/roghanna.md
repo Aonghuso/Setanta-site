@@ -4,6 +4,7 @@ next: liostai
 next-text: Liostaí agus Lúba
 prev: an-staitse
 prev-text: An Stáitse
+tsn-fname: decision-time
 ---
 
 # Roghanna agus Cinntí

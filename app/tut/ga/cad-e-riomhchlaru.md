@@ -4,6 +4,7 @@ next: an-staitse
 next-text: An Stáitse
 prev: reamhra
 prev-text: Réamhrá Teagaisc
+tsn-fname: what-is-programming
 ---
 
 # Is é Ríomhchlárú ná...

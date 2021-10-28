@@ -2,6 +2,7 @@
 title: Liostaí agus Lúba
 prev: roghanna
 prev-text: Roghanna agus Cinntí
+tsn-fname: lists
 ---
 
 # Liostaí
