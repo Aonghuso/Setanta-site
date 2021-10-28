@@ -2,6 +2,7 @@
 title: Ní Briathra a Dhearbhaíonn Ach Gníomh
 prev: nuair-a
 prev-text: Ag Lúbadh Go Deo
+tsn-fname: action
 ---
 
 # [[Ní Briathra a Dhearbhaíonn Ach Gníomh|Actions speak louder than words]]

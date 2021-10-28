@@ -4,6 +4,7 @@ next: useful
 next-text: Some Useful Actions
 prev: nuair-a
 prev-text: In the Loop
+tsn-fname: gniomh
 ---
 
 # Less talk more action 
