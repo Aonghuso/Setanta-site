@@ -4,6 +4,7 @@ next: lets-paint
 next-text: Let's Paint
 prev: useful
 prev-text: Some Useful Actions
+tsn-fname: cluiche
 ---
 
 # Bounce Game
@@ -58,7 +59,7 @@ paddle_width := fad_x@stáitse // 5
 ```
 
 Now we can make 2 more variables, `paddle_x` and `paddle_y`, these are the x and y
-[[coordinates|comhordnáidí]] of
+[[coordinates|comhordanáidí]] of
 the paddle. [[Specifically|Go sonrach]] the [[top right corner|cúinne ag an mbarr ar dheis]]. We want to start with the paddle in the bottom [[left|ar chlé]]
 of the stage, so let's set `paddle_x` to be `0`{.setanta}. To get the paddle on the bottom you
 might be tempted to set `paddle_y` to be `fad_y@stáitse` (the height of the stage), but this won't

@@ -1,5 +1,7 @@
 ---
 title: Roinnt Gníomhartha Úsáideacha
+next: cluiche
+next-text: Cluiche
 prev: gniomh
 prev-text: Ní Briathra a Dhearbhaíonn Ach Gníomh
 tsn-fname: useful
