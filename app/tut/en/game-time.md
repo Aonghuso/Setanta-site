@@ -65,6 +65,8 @@ of the stage, so let's set `paddle_x` to be `0`{.setanta}. To get the paddle on 
 might be tempted to set `paddle_y` to be `fad_y@stáitse` (the height of the stage), but this won't
 work, we need to subtract the paddle height to account for [[how tall|cé chomh hard]] the paddle is.
 
+![paddle_y](assets/paddle_y.png)
+
 Now our variables at the top of the program look like this:
 
 ```{.setanta .numberLines}
