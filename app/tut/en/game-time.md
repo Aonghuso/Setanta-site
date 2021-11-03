@@ -212,6 +212,8 @@ Then we can change the code in the `key_control` action to change the `paddle_x`
 the paddle left and right depending on the key that was pressed:
 
 ```{.setanta .numberLines}
+paddle_speed := 50
+
 gníomh key_control(key) {
     má key == "ArrowLeft" {
         paddle_x -= paddle_speed
