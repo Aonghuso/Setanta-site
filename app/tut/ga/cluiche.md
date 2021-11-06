@@ -11,7 +11,7 @@ Anois bainimis úsáid ár n-eolas nua le roinnt gníomhartha nua chun cluiche a
 cluichí cáiliúla *Pong* nó *Breakout*. Beidh slacán againn ag bun an stáitse agus beidh muid ábalta
 é a bhogadh chun bhreith ar an liathróid ag preabadh.
 
-<!--TODO Screenshot -->
+![An cluiche](assets/an-cluiche.png)
 
 # An Lúb Tarraingthe
 
@@ -248,7 +248,7 @@ leis an téacs "ArrowLeft"; Má tharlaíonn é sin, laghdaímid an athróg `x_sl
 Ar an lámh eile, má brúitear ar an saighead dheis, glaoitear ar an gníomh le "ArrowRight" agus
 méadaímid `x_slacán` faoi `luas_slacán`.
 
-Bain triail as an cód nua: Brúigh ← nó → agus ba chóir duit a fheiceáil an slacán ag bogadh.
+Bain triail as an cód nua: Brúigh ar ← nó → agus ba chóir duit a fheiceáil an slacán ag bogadh.
 
 {{{s
 airde_slacán := 20
@@ -288,3 +288,403 @@ nuair-a fíor {
     codladh(10)
 }
 }}}
+
+# An Liathróid
+
+Tá ár slacán againn, agus tá sé in am an liathróid a chruthú chun preab timpeall an stáitse.
+Díreacha mar a rinneamar don slacán, déanaimis athróga nua chun áit an liathróid a stóráil
+`x_liathróide` agus `y_liathróide`. Ba mhaith linn tosaigh leis an liathróid sa chúinne ag barr ar
+chlé, dá bhrí sin tosaímis le `x_liathróide` agus `y_liathróide` cothrom le `0`{.setanta}.
+
+Anois cruthaímis athróg nua do gha na liathróide agus cuirimis `30`{.setanta} isteach.
+
+Faoi dheireadh, tá 2 athróg uainn chun treo na liathróide a smachtú. Tugaimid `dx_liathróide` agus
+`dy_liathróide` orthu. Is é an luas sa threo x é `dx_liathróide` agus is é an luas sa threo y
+`dy_liathróide`. Tosaímis le an dhá acu cothrom le `2`{.setanta}.
+
+```{.setanta .numberLines}
+x_liathróide := 0
+y_liathróide := 0
+
+ga_liathróide := 30
+
+dx_liathróide := 2
+dy_liathróide := 2
+```
+
+## Tarraing an Liathróid
+
+Anois cuirimis an gcód chun an liathróid a tharraingt leis ár ríomhchlár. Athróimid dath an pinn go
+gorm agus bainfimid úsáid as an gníomh `ciorcal_lán`{.setanta} chun an liathróid a tharraingt.
+
+```{.setanta .numberLines}
+gníomh tarraing_stáitse() {
+    >-- Glan an stáitse
+    glan@stáitse()
+
+    >-- Úsáid peann dearg
+    dath@stáitse("dearg")
+
+    >-- Tarraing an slacán
+    dron_lán@stáitse(x_slacán, y_slacán, lthd_slacán, airde_slacán)
+
+    >-- Úsáid peann gorm
+    dath@stáitse("gorm")
+
+    >-- Tarraing an liathróid
+    ciorcal_lán@stáitse(x_liathróide, y_liathróide, ga_liathróide)
+}
+```
+
+## Bog an Liathróid
+
+Ba mhaith linn go bhogann an liathróid: Cruthaímis gníomh nua `bog_liathróid` agus glaoimis air inár
+lúb tarraingthe. Sa ghníomh seo, ba chóir dúinn an liathróid a bhogadh, go háirithe `dx_liathróide`
+sa treo x, agus `dy_liathróide` sa treo y.
+
+```{.setanta .numberLines}
+gníomh bog_liathróid() {
+    x_liathróide += dx_liathróide
+    y_liathróide += dy_liathróide
+}
+
+...
+
+nuair-a fíor {
+    >-- Glaoigh ar an gníomh tarraing_stáitse.
+    tarraing_stáitse()
+
+    >-- Bog an liathróid
+    bog_liathróid()
+
+    >-- Codail ar feadh cúple milleasoicind.
+    codladh(10)
+}
+```
+
+Rith an cód atá againn faoi láthair:
+
+{{{s
+airde_slacán := 20
+lthd_slacán := fad_x@stáitse // 5
+
+x_slacán := 0
+y_slacán := fad_y@stáitse - airde_slacán
+luas_slacán := 50
+
+x_liathróide := 0
+y_liathróide := 0
+
+ga_liathróide := 30
+
+dx_liathróide := 2
+dy_liathróide := 2
+
+gníomh tarraing_stáitse() {
+    >-- Glan an stáitse
+    glan@stáitse()
+
+    >-- Úsáid peann dearg
+    dath@stáitse("dearg")
+
+    >-- Tarraing an slacán
+    dron_lán@stáitse(x_slacán, y_slacán, lthd_slacán, airde_slacán)
+
+    >-- Úsáid peann gorm
+    dath@stáitse("gorm")
+
+    >-- Tarraing an liathróid
+    ciorcal_lán@stáitse(x_liathróide, y_liathróide, ga_liathróide)
+}
+
+gníomh bog_liathróid() {
+    x_liathróide += dx_liathróide
+    y_liathróide += dy_liathróide
+}
+
+gníomh smacht_eochrach(eochair) {
+    má eochair == "ArrowLeft" {
+        x_slacán -= luas_slacán
+    } nó má eochair == "ArrowRight" {
+        x_slacán += luas_slacán
+    }
+}
+
+méarchlár@stáitse(smacht_eochrach)
+
+>-- Lúb go deo.
+nuair-a fíor {
+    >-- Glaoigh ar an gníomh tarraing_stáitse.
+    tarraing_stáitse()
+
+    >-- Bog an liathróid
+    bog_liathróid()
+
+    >-- Codail ar feadh cúple milleasoicind.
+    codladh(10)
+}
+}}}
+
+![Ní bhuaileann an liathróid agus an slacán](assets/gan-bualadh.gif)
+
+A thiarcais! Téann an liathróid díreach tríd an slacán! Déanann sé sin mar ní scríobhamar aon
+loighic faoi cad a tharlaíonn nuair a bhuaileann an slacán agus an liathróid le chéile, nó nuair a
+bhuaileann an liathróid imill na stáitse. Déanaimis é sin anois.
+
+## Preab as na ballaí
+
+Chun loighic preibe a cruthú, ba chóir dúinn ár gníomh `bog_liathróid` a athrú. Sa ghníomh sin ba
+chóir dúinn seic a dhéanamh an bhfuil an liathróid ag dul thar ballaí an stáitse, agus má bhfuil sé
+ba chóir dúinn é a casadh timpeall.
+
+Mar shampla, má bheidh an x-comhordanáid níos lú ná `0`{.setanta}, beidh sé imithe thar an balla
+chlé, dá bhrí sin ba chóir dúinn é a casadh timpeall sa treo x. Mar an gcéanna má bheidh an
+x-comhordanáid níos mó ná `fad_x@stáitse`{.setanta} ba chóir dúinn an liathróid a chasadh timpeall
+agus má bheidh an y-comhordanáid níos lú ná `0`{.setanta} ba chóir dúinn an liathróid a chasadh
+timpeall sa treo y.
+
+Seo é ar gcód faoi láthair:
+
+```{.setanta .numberLines}
+gníomh bog_liathróid() {
+    x_liathróide += dx_liathróide
+    y_liathróide += dy_liathróide
+}
+```
+
+Cruthaímis 2 athróg nua inár gníomh: `x_tuartha` agus `y_tuartha`. Bainfimid úsáid astu chun suíomh
+na liathróide atá tuartha a stóráil, ansin b'fhéidir linn iad a úsáid chun seic an dhéanamh an
+mbeidh an liathróid thar imill na stáitse. Seo é ár gcód nua, ní dhéanann sé aon rud difriúil ach tá
+spás ann chun seiceanna a dhéanamh níos déanaí
+
+```{.setanta .numberLines}
+gníomh bog_liathróid() {
+    >-- Cá bhfuil an liathróid ag dul?
+    x_tuartha := x_liathróide + dx_liathróide
+    y_tuartha := y_liathróide + dy_liathróide
+
+    >-- Déanfaimid ár seiceanna anseo
+
+    >-- Tar éis na seiceanna, úasdátaigh áit na liathróide.
+    x_liathróide += dx_liathróide
+    y_liathróide += dy_liathróide
+}
+```
+
+Anois tá sé in am tosú ag scríobh ár loighic preibe. Chun an liathróid a chasadh timpeall sa treo x,
+níl le déanamh againn ach an luach `dx_liathróide` a athrú go diúltach. Mar an gcéanna, chun an
+liathróid a casadh timpeall sa treo y, athraímid `dy_liathróide` go `-dy_liathróide`.
+
+Má tá an liathróid ar tí dul thar bun an stáitse, tá an cluiche thart. Is féidir linn an gníomh
+`stop()` chun an ríomhchlár a stopadh.
+
+Seo an cód chun é sin a dhéanamh:
+
+```{.setanta .numberLines}
+gníomh bog_liathróid() {
+    >-- Cá bhfuil an liathróid ag dul?
+    x_tuartha := x_liathróide + dx_liathróide
+    y_tuartha := y_liathróide + dy_liathróide
+
+    >-- Déanfaimid ár seiceanna anseo
+
+    má x_tuartha < 0 {
+        >-- Beidh an liathróid thar an taobh chlé.
+        >-- Cas an liathróid timpeall sa treo x.
+        dx_liathróide = -dx_liathróide
+    }
+    má x_tuartha > fad_x@stáitse {
+        >-- Beidh an liathróid thar an taobh dheis.
+        >-- Cas an liathróid timpeall sa treo x.
+        dx_liathróide = -dx_liathróide
+    }
+    má y_tuartha < 0 {
+        >-- Beidh an liathróid thar barr an stáitse.
+        >-- Cas an liathróid timpeall sa treo y.
+        dy_liathróide = -dy_liathróide
+    }
+    má y_tuartha > fad_y@stáitse {
+        >-- Tá an liathróid ag dul thar bun an stáitse.
+        >-- Tá an cluiche thart.
+        scríobh("CLUICHE THART")
+        stop()
+    }
+
+    >-- Tar éis na seiceanna, úasdátaigh áit na liathróide.
+    x_liathróide += dx_liathróide
+    y_liathróide += dy_liathróide
+}
+```
+
+## Preab as an slacán
+
+Anois preabann an liathróid as na ballaí, ach fós téann sé díreach tríd an slacán. Nuair a théann an
+liathróid síos go dtí leibhéal an tslacáin, is féidir linn seic breise a dhéanamh an bhfuil an
+slacán faoin liathróid, agus má tá sé casfaimid an liathróid timpeall díreach mar a dhéanaimid nuair
+a bhuaileann sé imill an stáitse.
+
+Chun seic a dhéanamh an bhfuil an slacán faoin liathróid, is féidir linn seiceáil an bhfuil lár an
+liathróid sa treo x (`x_tuartha`) idir `x_slacán` agus `x_slacán + lthd_slacán`.
+
+```{.setanta .numberLines}
+gníomh bog_liathróid() {
+    >-- Cá bhfuil an liathróid ag dul?
+    x_tuartha := x_liathróide + dx_liathróide
+    y_tuartha := y_liathróide + dy_liathróide
+
+    >-- Déanfaimid ár seiceanna anseo
+
+    má x_tuartha < 0 {
+        >-- Beidh an liathróid thar an taobh chlé.
+        >-- Cas an liathróid timpeall sa treo x.
+        dx_liathróide = -dx_liathróide
+    }
+    má x_tuartha > fad_x@stáitse {
+        >-- Beidh an liathróid thar an taobh dheis.
+        >-- Cas an liathróid timpeall sa treo x.
+        dx_liathróide = -dx_liathróide
+    }
+    má y_tuartha < 0 {
+        >-- Beidh an liathróid thar barr an stáitse.
+        >-- Cas an liathróid timpeall sa treo y.
+        dy_liathróide = -dy_liathróide
+    }
+    má y_tuartha > fad_y@stáitse {
+        >-- Tá an liathróid ag dul thar bun an stáitse.
+        >-- Tá an cluiche thart.
+        scríobh("CLUICHE THART")
+        stop()
+    }
+
+    má y_tuartha > y_slacán {
+        >-- Tá an liathróid ag leibhéal an tslacáin.
+        >-- Déan seic an bhfuil an slacán faoin liathróid?
+        má x_slacán <= x_tuartha & x_tuartha <= x_slacán + lthd_slacán {
+            dy_liathróide = -dy_liathróide
+        }
+    }
+
+    >-- Tar éis na seiceanna, úasdátaigh áit na liathróide.
+    x_liathróide += dx_liathróide
+    y_liathróide += dy_liathróide
+}
+```
+
+Bain triail as!
+
+{{{s
+airde_slacán := 20
+lthd_slacán := fad_x@stáitse // 5
+
+x_slacán := 0
+y_slacán := fad_y@stáitse - airde_slacán
+luas_slacán := 50
+
+x_liathróide := 0
+y_liathróide := 0
+
+ga_liathróide := 30
+
+dx_liathróide := 2
+dy_liathróide := 2
+
+gníomh tarraing_stáitse() {
+    >-- Glan an stáitse
+    glan@stáitse()
+
+    >-- Úsáid peann dearg
+    dath@stáitse("dearg")
+
+    >-- Tarraing an slacán
+    dron_lán@stáitse(x_slacán, y_slacán, lthd_slacán, airde_slacán)
+
+    >-- Úsáid peann gorm
+    dath@stáitse("gorm")
+
+    >-- Tarraing an liathróid
+    ciorcal_lán@stáitse(x_liathróide, y_liathróide, ga_liathróide)
+}
+
+gníomh bog_liathróid() {
+    >-- Cá bhfuil an liathróid ag dul?
+    x_tuartha := x_liathróide + dx_liathróide
+    y_tuartha := y_liathróide + dy_liathróide
+
+    >-- Déanfaimid ár seiceanna anseo
+
+    má x_tuartha < 0 {
+        >-- Beidh an liathróid thar an taobh chlé.
+        >-- Cas an liathróid timpeall sa treo x.
+        dx_liathróide = -dx_liathróide
+    }
+    má x_tuartha > fad_x@stáitse {
+        >-- Beidh an liathróid thar an taobh dheis.
+        >-- Cas an liathróid timpeall sa treo x.
+        dx_liathróide = -dx_liathróide
+    }
+    má y_tuartha < 0 {
+        >-- Beidh an liathróid thar barr an stáitse.
+        >-- Cas an liathróid timpeall sa treo y.
+        dy_liathróide = -dy_liathróide
+    }
+    má y_tuartha > fad_y@stáitse {
+        >-- Tá an liathróid ag dul thar bun an stáitse.
+        >-- Tá an cluiche thart.
+        scríobh("CLUICHE THART")
+        stop()
+    }
+
+    má y_tuartha > y_slacán {
+        >-- Tá an liathróid ag leibhéal an tslacáin.
+        >-- Déan seic an bhfuil an slacán faoin liathróid?
+        má x_slacán <= x_tuartha & x_tuartha <= x_slacán + lthd_slacán {
+            dy_liathróide = -dy_liathróide
+        }
+    }
+
+    >-- Tar éis na seiceanna, úasdátaigh áit na liathróide.
+    x_liathróide += dx_liathróide
+    y_liathróide += dy_liathróide
+}
+
+gníomh smacht_eochrach(eochair) {
+    má eochair == "ArrowLeft" {
+        x_slacán -= luas_slacán
+    } nó má eochair == "ArrowRight" {
+        x_slacán += luas_slacán
+    }
+}
+
+méarchlár@stáitse(smacht_eochrach)
+
+>-- Lúb go deo.
+nuair-a fíor {
+    >-- Glaoigh ar an gníomh tarraing_stáitse.
+    tarraing_stáitse()
+
+    >-- Bog an liathróid
+    bog_liathróid()
+
+    >-- Codail ar feadh cúple milleasoicind.
+    codladh(10)
+}
+}}}
+
+![Oibrionn Sé!](assets/an-cluiche.gif)
+
+Oibríonn Sé! Preabann an liathróid as na ballaí agus an slacán, ach críochnaíonn an cluiche má
+théann sé thar bun an stáitse.
+
+# Dúshlán
+
+Seo cúpla smaointe a d'fhéadaimis a úsáid chun ár gcluiche a feabhsú:
+
+- Athraigh an ríomhchlár ionas go bhfuil scór ag an imreoir. Méadaigh an scór gach uair a buaileann
+  an liathróid leis an slacán, agus ag deireadh an chluiche scríobh an scór ar an gconsól.
+- Cruthaigh córas saolta: tosaíonn an t-imreoir le méid saolta agus gach uair a cailleann sé an
+  liathróid cailleann sé saol amháin.
+- Anois úsáidimid lár an liathróid chun na seiceanna a dhéanamh an bhfuil an liathróid chun bualadh
+  leis na ballaí nó an slacán. Oibríonn sé seo ach níl sé foirfe, nuair a buaileann an liathróid an
+  slacán, téann píosa mór den liathróid tríd an slacán sula mbuaileann lár an liathróid an slacán.
+  Athraigh an cód ionas go úsáideann sé ga na liathróide chun seic a dhéanamh an bhfuil imeall na
+  liathróide ag bualadh leis na ballaí nó an slacán in ionad an lár.
