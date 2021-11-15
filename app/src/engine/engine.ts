@@ -13,12 +13,18 @@ const colourMap: Map<string, string> = new Map([
     ["corcra", "purple"],
     ["dearg", "red"],
     ["dubh", "black"],
+    ["donn", "brown"],
+    ["flannbhuí", "orange"],
     ["glas", "green"],
     ["gorm", "blue"],
     ["oraiste", "orange"],
     ["oráiste", "orange"],
     ["liath", "gray"],
+    ["rua", "red"],
+    ["uaine", "green"],
+    //TODO: síntí fada
 ]);
+
 export class DisplayEngine {
 
     public get sizeX(): number {
