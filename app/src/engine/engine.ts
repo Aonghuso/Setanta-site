@@ -2,28 +2,28 @@ import * as Asserts from "setanta/node_build/asserts";
 import { Value, callFunc } from "setanta/node_build/values";
 import { CanvasCtx } from "./types";
 import { STOP } from "setanta/node_build/consts";
+import { allFadaCombos } from "setanta/node_build/builtins";
 
 const colourMap: Map<string, string> = new Map([
-    ["ban", "white"],
-    ["bandearg", "pink"],
-    ["bui", "yellow"],
-    ["buí", "yellow"],
-    ["bán", "white"],
-    ["bándearg", "pink"],
-    ["corcra", "purple"],
-    ["dearg", "red"],
-    ["dubh", "black"],
-    ["donn", "brown"],
-    ["flannbhuí", "orange"],
-    ["glas", "green"],
-    ["gorm", "blue"],
-    ["oraiste", "orange"],
-    ["oráiste", "orange"],
-    ["liath", "gray"],
-    ["rua", "red"],
-    ["uaine", "green"],
-    //TODO: síntí fada
-]);
+        ["buí", "yellow"],
+        ["bán", "white"],
+        ["bándearg", "pink"],
+        ["corcra", "purple"],
+        ["dearg", "red"],
+        ["donn", "brown"],
+        ["dubh", "black"],
+        ["flannbhuí", "orange"],
+        ["glas", "green"],
+        ["gorm", "blue"],
+        ["liath", "gray"],
+        ["oráiste", "orange"],
+        ["rua", "red"],
+        ["uaine", "green"],
+    ]
+    // Use allFadaCombos to generate all colour combos without fadas
+    .map(([a, b]): [string, string][] => allFadaCombos(a).map(x => [x, b]))
+    .reduce((a, v) => a.concat(v))
+);
 
 export class DisplayEngine {
 
