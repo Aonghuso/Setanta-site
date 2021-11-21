@@ -1,4 +1,3 @@
-import { Value } from "setanta/node_build/values";
 import { Parser, SyntaxErr } from "setanta/node_build/gen_parser";
 import { Interpreter } from "setanta/node_build/i10r";
 import { genBuiltins } from "./builtins";

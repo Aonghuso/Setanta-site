@@ -55,7 +55,7 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (code: string) => {
             return callFunc(f, [code])
-                .then(() => {})
+                .then(() => undefined)
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
                     : Promise.resolve());
@@ -69,7 +69,7 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (code: string) => {
             return callFunc(f, [code])
-                .then(() => {})
+                .then(() => undefined)
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
                     : Promise.resolve());
@@ -83,7 +83,7 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (x: number, y: number) => {
             return callFunc(f, [x, y])
-                .then(() => {})
+                .then(() => undefined)
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
                     : Promise.resolve());
@@ -97,7 +97,7 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (x: number, y: number) => {
             return callFunc(f, [x, y])
-                .then(() => {})
+                .then(() => undefined)
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
                     : Promise.resolve());
@@ -111,7 +111,7 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (x: number, y: number) => {
             return callFunc(f, [x, y])
-                .then(() => {})
+                .then(() => undefined)
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
                     : Promise.resolve());
