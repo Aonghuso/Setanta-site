@@ -118,6 +118,7 @@ ciorcal@stáitse(100, 100, 50)`;
                     </fyp-console>
                     <canvas id="stage" width="1000" height="750"
                     tabindex="0"
+                    onclick="this.focus();"
                     @keydown="${this.handleKeyDown}"
                     @keyup="${this.handleKeyUp}"
                     @mousedown="${this.handleMouseDown}"
@@ -195,9 +196,10 @@ ciorcal@stáitse(100, 100, 50)`;
     // not correctly initialised and doesn't draw correctly.
     private tabSelect() {
         const sel = this.tabs.selected;
-        if(sel === 1) // Selected stáitse
+        if(sel === 1) { // Selected stáitse
             this.showStage();
-        else if (sel === 0)
+            this.stage.focus();
+        } else if (sel === 0)
             this.showConsole();
     }
 }

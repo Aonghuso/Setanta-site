@@ -182,6 +182,7 @@ class FypApp extends RuntimeComponent {
                 <div class="card-content">
                     <canvas id='stage' width="1000" height="750"
                     tabindex="0"
+                    onclick="this.focus();"
                     @keydown="${this.handleKeyDown}"
                     @keyup="${this.handleKeyUp}"
                     @mousedown="${this.handleMouseDown}"
