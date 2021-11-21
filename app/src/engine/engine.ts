@@ -44,20 +44,21 @@ export class DisplayEngine {
         this.ctx = ctx;
     }
 
-    public keyDownFn: (code: string) => Promise<Value> = () => Promise.resolve(null);
-    public keyUpFn: (code: string) => Promise<Value> = () => Promise.resolve(null);
-    public mouseUpFn: (x: number, y: number) => Promise<Value> = () => Promise.resolve(null);
-    public mouseDownFn: (x: number, y: number) => Promise<Value> = () => Promise.resolve(null);
-    public mouseMoveFn: (x: number, y: number) => Promise<Value> = () => Promise.resolve(null);
+    public keyDownFn: (code: string) => Promise<void> = () => Promise.resolve();
+    public keyUpFn: (code: string) => Promise<void> = () => Promise.resolve();
+    public mouseUpFn: (x: number, y: number) => Promise<void> = () => Promise.resolve();
+    public mouseDownFn: (x: number, y: number) => Promise<void> = () => Promise.resolve();
+    public mouseMoveFn: (x: number, y: number) => Promise<void> = () => Promise.resolve();
 
     // arity: 1; f: (string) => null;
     public registerKeyDownHandler([f]: Value[]): Promise<Value> {
         Asserts.assertCallable(f);
         const fn = (code: string) => {
             return callFunc(f, [code])
+                .then(() => {})
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
-                    : Promise.resolve(null));
+                    : Promise.resolve());
         };
         this.keyDownFn = fn;
         return Promise.resolve(null);
@@ -68,9 +69,10 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (code: string) => {
             return callFunc(f, [code])
+                .then(() => {})
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
-                    : Promise.resolve(null));
+                    : Promise.resolve());
         };
         this.keyUpFn = fn;
         return Promise.resolve(null);
@@ -81,9 +83,10 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (x: number, y: number) => {
             return callFunc(f, [x, y])
+                .then(() => {})
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
-                    : Promise.resolve(null));
+                    : Promise.resolve());
         };
         this.mouseDownFn = fn;
         return Promise.resolve(null);
@@ -94,9 +97,10 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (x: number, y: number) => {
             return callFunc(f, [x, y])
+                .then(() => {})
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
-                    : Promise.resolve(null));
+                    : Promise.resolve());
         };
         this.mouseUpFn = fn;
         return Promise.resolve(null);
@@ -107,9 +111,10 @@ export class DisplayEngine {
         Asserts.assertCallable(f);
         const fn = (x: number, y: number) => {
             return callFunc(f, [x, y])
+                .then(() => {})
                 .catch(err => err !== STOP
                     ? Promise.reject(err)
-                    : Promise.resolve(null));
+                    : Promise.resolve());
         };
         this.mouseMoveFn = fn;
         return Promise.resolve(null);

@@ -17,7 +17,7 @@ export abstract class RuntimeComponent extends LitElement {
     protected abstract stage: HTMLCanvasElement;
     protected abstract editor: FYPEditor;
     protected abstract console: FYPConsole;
-    protected abstract running: boolean = false;
+    protected abstract running: boolean;
 
     protected activeCtx: ExecCtx | null = null;
     protected marks: TextMarker[] = [];
@@ -90,24 +90,26 @@ export abstract class RuntimeComponent extends LitElement {
         }
     }
 
-    protected displayRuntimeError(e: Error): void {
-        if((e instanceof RuntimeError || e instanceof StaticError)
-            && e.start && e.end && this.editor.editor){
-
-            const mrk = this.editor.editor.markText(
-                {
-                    line: e.start.line - 1,
-                    ch: e.start.offset,
-                },
-                {
-                    line: e.end.line - 1,
-                    ch: e.end.offset,
-                },
-                {className: "syntax-error"},
-            );
-            this.marks.push(mrk);
+    protected displayRuntimeError(e: unknown): void {
+        if(e instanceof RuntimeError || e instanceof StaticError) {
+            if(e.start && e.end && this.editor.editor){
+                const mrk = this.editor.editor.markText(
+                    {
+                        line: e.start.line - 1,
+                        ch: e.start.offset,
+                    },
+                    {
+                        line: e.end.line - 1,
+                        ch: e.end.offset,
+                    },
+                    {className: "syntax-error"},
+                );
+                this.marks.push(mrk);
+            }
+            this.console.writeError(e);
+        } else {
+            this.console.writeError(new Error(`Earráid anaithnid: ${e}`));
         }
-        this.console.writeError(e);
 
         // TODO this shouldn't be here: doesn't belong
         if(this.activeCtx)
@@ -116,16 +118,14 @@ export abstract class RuntimeComponent extends LitElement {
 
     protected handleKeyDown(e: KeyboardEvent): void {
         if (this.activeCtx) {
-            this.activeCtx.handleKeyDown(e)
-                .catch(err => this.displayRuntimeError(err));
+            this.activeCtx.handleKeyDown(e);
             e.preventDefault();
         }
     }
 
     protected handleKeyUp(e: KeyboardEvent): void {
         if (this.activeCtx) {
-            this.activeCtx.handleKeyUp(e)
-                .catch(err => this.displayRuntimeError(err));
+            this.activeCtx.handleKeyUp(e);
             e.preventDefault();
         }
     }
@@ -135,8 +135,7 @@ export abstract class RuntimeComponent extends LitElement {
             // We pass in the *relative* positions to the height and width
             // of the stage
             const [x, y] = this.getCanvasRelativeCoords(e);
-            this.activeCtx.handleMouseDown(x, y)
-                .catch(err => this.displayRuntimeError(err));
+            this.activeCtx.handleMouseDown(x, y);
             e.preventDefault();
         }
     }
@@ -146,8 +145,7 @@ export abstract class RuntimeComponent extends LitElement {
             // We pass in the *relative* positions to the height and width
             // of the stage
             const [x, y] = this.getCanvasRelativeCoords(e);
-            this.activeCtx.handleMouseUp(x, y)
-                .catch(err => this.displayRuntimeError(err));
+            this.activeCtx.handleMouseUp(x, y);
             e.preventDefault();
         }
     }
@@ -157,8 +155,7 @@ export abstract class RuntimeComponent extends LitElement {
             // We pass in the *relative* positions to the height and width
             // of the stage
             const [x, y] = this.getCanvasRelativeCoords(e);
-            this.activeCtx.handleMouseMove(x, y)
-                .catch(err => this.displayRuntimeError(err));
+            this.activeCtx.handleMouseMove(x, y);
             e.preventDefault();
         }
     }

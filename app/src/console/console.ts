@@ -119,12 +119,14 @@ p {
 
     public writeAlt(msg: string): Promise<unknown> {
         this.lines.push(html`<p class="alt">${msg}</p>`);
-        return this.requestUpdate();
+        this.requestUpdate();
+        return this.updateComplete;
     }
 
     public writeOut(msg: string): Promise<unknown> {
         this.lines.push(html`<p>${msg}</p>`);
-        return this.requestUpdate();
+        this.requestUpdate();
+        return this.updateComplete;
     }
 
     public writeSyntaxErr(e: SyntaxErr): void {
@@ -138,7 +140,8 @@ p {
 
     private pushErrorMsg(msg: string) {
         this.lines.push(html`<div class="error"><iron-icon class="no-shrink" icon="icons:error-outline"></iron-icon>${msg}</div>`);
-        return this.requestUpdate();
+        this.requestUpdate();
+        return this.updateComplete;
     }
 
     private keyPress(e: KeyboardEvent) {

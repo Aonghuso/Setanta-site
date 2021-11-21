@@ -16,33 +16,33 @@ export class ExecCtx {
         this.display = display;
     }
 
-    public handleKeyDown(e: KeyboardEvent): Promise<Value> {
-        return this.display.keyDownFn(e.key);
+    public handleKeyDown(e: KeyboardEvent): void {
+        this.interpreter?.inject(() => this.display.keyDownFn(e.key));
     }
 
-    public handleKeyUp(e: KeyboardEvent): Promise<Value> {
-        return this.display.keyUpFn(e.key);
-    }
-
-    // Takes relative x and y positions
-    public handleMouseDown(x: number, y: number): Promise<Value> {
-        // We multiply the relative positions by the height
-        // and width to get absolute positions
-        return this.display.mouseDownFn(x * this.display.sizeX, y * this.display.sizeY);
+    public handleKeyUp(e: KeyboardEvent): void {
+        this.interpreter?.inject(() => this.display.keyUpFn(e.key));
     }
 
     // Takes relative x and y positions
-    public handleMouseUp(x: number, y: number): Promise<Value> {
+    public handleMouseDown(x: number, y: number): void {
         // We multiply the relative positions by the height
         // and width to get absolute positions
-        return this.display.mouseUpFn(x * this.display.sizeX, y * this.display.sizeY);
+        this.interpreter?.inject(() => this.display.mouseDownFn(x * this.display.sizeX, y * this.display.sizeY));
     }
 
     // Takes relative x and y positions
-    public handleMouseMove(x: number, y: number): Promise<Value> {
+    public handleMouseUp(x: number, y: number): void {
         // We multiply the relative positions by the height
         // and width to get absolute positions
-        return this.display.mouseMoveFn(x * this.display.sizeX, y * this.display.sizeY);
+        this.interpreter?.inject(() => this.display.mouseUpFn(x * this.display.sizeX, y * this.display.sizeY));
+    }
+
+    // Takes relative x and y positions
+    public handleMouseMove(x: number, y: number): void {
+        // We multiply the relative positions by the height
+        // and width to get absolute positions
+        this.interpreter?.inject(() => this.display.mouseMoveFn(x * this.display.sizeX, y * this.display.sizeY));
     }
 
     public stop(): void {
@@ -75,7 +75,8 @@ export class ExecCtx {
         if (res.ast === null)
             return Promise.reject(new Error("Theip ar an bparsálaí: Earráid anaithnid"));
         const ast = res.ast;
-        const i = new Interpreter(builtins);
+        // 30 ticks-per-second.
+        const i = new Interpreter(30, builtins);
         this.interpreter = i;
         this.halt = false;
         try {
